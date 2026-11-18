@@ -15,9 +15,9 @@
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-4CAF50?style=for-the-badge&labelColor=F0F0F0"/></a>
 
 <br><br>
-<img src="assets/teaser.jpg" width="850px" alt="AdaPixFlow on a held-out scene"/>
+<img src="assets/hero.webp" width="850px" alt="AdaPixFlow advecting object pixels on a held-out scene"/>
 <br>
-<em>AdaPixFlow on a held-out scene, PlasticineFall. Left: observed states and our pathlines. Right: predicted 3D object points at a step between observations, against the compared methods.</em>
+<em>A held-out scene (PlasticineFall): the object pixels of an observation move along the predicted velocity field to a step between observations.</em>
 <br><br>
 
 <div id="toc">
@@ -52,6 +52,12 @@ The operator is trained once, through the advection, by comparing the advected p
 ---
 
 ## Results
+
+<div align="center">
+<img src="assets/teaser.jpg" width="850px" alt="AdaPixFlow on a held-out scene against the compared methods"/>
+<br>
+<em>Left: observed states and our pathlines. Right: predicted 3D object points at a step between observations, against the compared methods, shaded by distance to the ground truth.</em>
+</div>
 
 On the six PhysInOne comparison scenes (Tab. 1 of the paper; F1 in %, with views 0 and 1 held out of every input):
 
