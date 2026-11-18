@@ -1,0 +1,27 @@
+# AdaPixFlow -- PhysInOne training. The exact settings of the paper's model (Tab. 6 and 7):
+# 24,000 steps of 4 crops of 48^3 voxels: about 4 h on one RTX 5080, including the periodic evaluations.
+# Paths are relative to the repository root.
+name: physinone
+output_root: ./experiments/
+data:
+  split: splits/physinone.json
+  fused_dirs: [data/physinone/fused]
+train:
+  steps: 24000
+  batch: 4
+  crop: 48
+  lr: 1.0e-3
+  warmup: 500
+  seed: 0
+  rigid_weight: 0.2
+  rigid_start_frac: 0.4
+  eval_every: 3000
+  eval_scenes_per_tier: 2
+eval:
+  sets: [test, val]
+  spacings: [2, 4, 8]
+  max_side: 128
+  tiling: [margin, 64, 12]
+logging:
+  wandb: false
+  project: adapixflow

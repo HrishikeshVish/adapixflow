@@ -1,0 +1,13 @@
+# AdaPixFlow -- Python dependencies (tested: Python 3.12, PyTorch 2.11, CUDA 12.8).
+#
+# Install PyTorch first, with the wheel for your CUDA version (see README "Installation"):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+# then:
+#   pip install -r requirements.txt
+
+numpy>=1.26
+scipy>=1.11
+pillow>=10.0
+PyYAML>=6.0
+wandb>=0.17          # only used when logging.wandb is true
+pytest>=8.0          # tests (optional)

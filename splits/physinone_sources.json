@@ -1,0 +1,1055 @@
+{
+ "_about": "Hugging Face location of every PhysInOne scene used here: 152 training and 15 Test scenes from the Train release (PhysInOneP01-P16), 8 Val scenes from vLAR/PhysInOne.",
+ "scenes": {
+  "DropInLiquid__bg576__JkDhOg_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/DropInLiquid__bg576__JkDhOg_trajectory.zip",
+   "size": 696794191,
+   "tier": "A"
+  },
+  "DropInLiquid__bg676__GJoI7o_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/DropInLiquid__bg676__GJoI7o_trajectory.zip",
+   "size": 414120331,
+   "tier": "A"
+  },
+  "DropInLiquid__bg676__ju4wIn_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/DropInLiquid__bg676__ju4wIn_trajectory.zip",
+   "size": 426925377,
+   "tier": "A"
+  },
+  "ElasticFall__bg801__ioGbTO_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/ElasticFall__bg801__ioGbTO_trajectory.zip",
+   "size": 339524863,
+   "tier": "A"
+  },
+  "ElasticFall__bg805__GnjKX3_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/ElasticFall__bg805__GnjKX3_trajectory.zip",
+   "size": 350225373,
+   "tier": "A"
+  },
+  "ElasticFall__bg805__IiM2Qz_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/ElasticFall__bg805__IiM2Qz_trajectory.zip",
+   "size": 349849692,
+   "tier": "A"
+  },
+  "ElasticFall__bg805__LvZLgM_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/ElasticFall__bg805__LvZLgM_trajectory.zip",
+   "size": 350007783,
+   "tier": "A"
+  },
+  "ElasticFall__bg805__QGutnr_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/ElasticFall__bg805__QGutnr_trajectory.zip",
+   "size": 347835290,
+   "tier": "A"
+  },
+  "ElasticFall__bg806__Wlhnku_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/ElasticFall__bg806__Wlhnku_trajectory.zip",
+   "size": 246384574,
+   "tier": "A"
+  },
+  "ElasticFall__bg806__owBqIO_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/ElasticFall__bg806__owBqIO_trajectory.zip",
+   "size": 299187656,
+   "tier": "A"
+  },
+  "ElasticFall__bg808__0HLADr_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/ElasticFall__bg808__0HLADr_trajectory.zip",
+   "size": 596580775,
+   "tier": "A"
+  },
+  "ElasticFall__bg812__7grGHJ_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/ElasticFall__bg812__7grGHJ_trajectory.zip",
+   "size": 408450254,
+   "tier": "A"
+  },
+  "FloatOnLiquid_DropInLiquid__bg681__QzU0jZ_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/DoublePhysics/FloatOnLiquid_DropInLiquid__bg681__QzU0jZ_trajectory.zip",
+   "size": 591243638,
+   "tier": "A"
+  },
+  "FloatOnLiquid__bg501__u6y5Ut_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/FloatOnLiquid__bg501__u6y5Ut_trajectory.zip",
+   "size": 642437577,
+   "tier": "A"
+  },
+  "FloatOnLiquid__bg510__GHrWow_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/FloatOnLiquid__bg510__GHrWow_trajectory.zip",
+   "size": 3012388426,
+   "tier": "A"
+  },
+  "LiquidMultiTransfers_LiquidRise_LiquidTension__bg530__2Gb0lR_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/TriplePhysics/LiquidMultiTransfers_LiquidRise_LiquidTension__bg530__2Gb0lR_trajectory.zip",
+   "size": 1332548393,
+   "tier": "A"
+  },
+  "LiquidMultiTransfers_LiquidRise_LiquidTension__bg530__6j1goe_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/TriplePhysics/LiquidMultiTransfers_LiquidRise_LiquidTension__bg530__6j1goe_trajectory.zip",
+   "size": 1228573831,
+   "tier": "A"
+  },
+  "LiquidMultiTransfers_LiquidRise_LiquidTension__bg530__AizFvn_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/TriplePhysics/LiquidMultiTransfers_LiquidRise_LiquidTension__bg530__AizFvn_trajectory.zip",
+   "size": 1238845603,
+   "tier": "A"
+  },
+  "LiquidMultiTransfers_LiquidRise_LiquidTension__bg530__WlwSSE_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/TriplePhysics/LiquidMultiTransfers_LiquidRise_LiquidTension__bg530__WlwSSE_trajectory.zip",
+   "size": 1308045194,
+   "tier": "A"
+  },
+  "LiquidMultiTransfers_LiquidRise_LiquidTension__bg530__wAlknr_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/TriplePhysics/LiquidMultiTransfers_LiquidRise_LiquidTension__bg530__wAlknr_trajectory.zip",
+   "size": 1340669466,
+   "tier": "A"
+  },
+  "LiquidMultiTransfers_LiquidRise_LiquidTension__bg538__459h2J_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/TriplePhysics/LiquidMultiTransfers_LiquidRise_LiquidTension__bg538__459h2J_trajectory.zip",
+   "size": 991080843,
+   "tier": "A"
+  },
+  "LiquidMultiTransfers_LiquidRise_LiquidTension__bg538__I8mIPN_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/TriplePhysics/LiquidMultiTransfers_LiquidRise_LiquidTension__bg538__I8mIPN_trajectory.zip",
+   "size": 996242373,
+   "tier": "A"
+  },
+  "LiquidTransfer__bg536__pzNpS9_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/LiquidTransfer__bg536__pzNpS9_trajectory.zip",
+   "size": 618335323,
+   "tier": "A"
+  },
+  "LiquidTransfer__bg536__wNTgQL_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/LiquidTransfer__bg536__wNTgQL_trajectory.zip",
+   "size": 580274021,
+   "tier": "A"
+  },
+  "LiquidTransfer__bg536__xO0ded_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/LiquidTransfer__bg536__xO0ded_trajectory.zip",
+   "size": 732562728,
+   "tier": "A"
+  },
+  "LiquidTransfer__bg543__3aeHfc_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/LiquidTransfer__bg543__3aeHfc_trajectory.zip",
+   "size": 619876623,
+   "tier": "A"
+  },
+  "AccelConcaveSpin__bg010__Dtjgqi_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/SinglePhysics/AccelConcaveSpin__bg010__Dtjgqi_trajectory.zip",
+   "size": 402216781,
+   "tier": "B1"
+  },
+  "AccelConcaveSpin__bg010__MVCK3L_trajectory": {
+   "repo": "PhysInOneP13/PhysInOneP13",
+   "path": "Train/SinglePhysics/AccelConcaveSpin__bg010__MVCK3L_trajectory.zip",
+   "size": 245532177,
+   "tier": "B1"
+  },
+  "AccelConcaveSpin__bg050__88ToKZ_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/SinglePhysics/AccelConcaveSpin__bg050__88ToKZ_trajectory.zip",
+   "size": 196067456,
+   "tier": "B1"
+  },
+  "AccelConcaveSpin__bg071__vCIasb_trajectory": {
+   "repo": "PhysInOneP03/PhysInOneP03",
+   "path": "Train/SinglePhysics/AccelConcaveSpin__bg071__vCIasb_trajectory.zip",
+   "size": 433475111,
+   "tier": "B1"
+  },
+  "AccelConcaveSpin__bg095__MEfQYv_trajectory": {
+   "repo": "PhysInOneP15/PhysInOneP15",
+   "path": "Train/SinglePhysics/AccelConcaveSpin__bg095__MEfQYv_trajectory.zip",
+   "size": 548172807,
+   "tier": "B1"
+  },
+  "AccelPanelSpin__bg080__ZIczK9_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/SinglePhysics/AccelPanelSpin__bg080__ZIczK9_trajectory.zip",
+   "size": 571842193,
+   "tier": "B1"
+  },
+  "AccelPanelSpin__bg140__1z9D6U_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/SinglePhysics/AccelPanelSpin__bg140__1z9D6U_trajectory.zip",
+   "size": 594752693,
+   "tier": "B1"
+  },
+  "AccelPanelSpin__bg140__kXxemb_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/SinglePhysics/AccelPanelSpin__bg140__kXxemb_trajectory.zip",
+   "size": 556686481,
+   "tier": "B1"
+  },
+  "AccelSurfaceSpin__bg081__Zz57vj_trajectory": {
+   "repo": "PhysInOneP02/PhysInOneP02",
+   "path": "Train/SinglePhysics/AccelSurfaceSpin__bg081__Zz57vj_trajectory.zip",
+   "size": 571360873,
+   "tier": "B1"
+  },
+  "AccelSurfaceSpin__bg081__eYFaZD_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/SinglePhysics/AccelSurfaceSpin__bg081__eYFaZD_trajectory.zip",
+   "size": 462980942,
+   "tier": "B1"
+  },
+  "BlockWallCollapse__bg001__Qcea3z_trajectory": {
+   "repo": "PhysInOneP04/PhysInOneP04",
+   "path": "Train/SinglePhysics/BlockWallCollapse__bg001__Qcea3z_trajectory.zip",
+   "size": 467663789,
+   "tier": "B1"
+  },
+  "BlockWallCollapse__bg001__XXvPhU_trajectory": {
+   "repo": "PhysInOneP09/PhysInOneP09",
+   "path": "Train/SinglePhysics/BlockWallCollapse__bg001__XXvPhU_trajectory.zip",
+   "size": 507266388,
+   "tier": "B1"
+  },
+  "BlockWallCollapse__bg001__peI7aZ_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/SinglePhysics/BlockWallCollapse__bg001__peI7aZ_trajectory.zip",
+   "size": 506557340,
+   "tier": "B1"
+  },
+  "BlockWallCollapse__bg002__QavvBQ_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/SinglePhysics/BlockWallCollapse__bg002__QavvBQ_trajectory.zip",
+   "size": 999041755,
+   "tier": "B1"
+  },
+  "BlockWallCollapse__bg066__WbL3LJ_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/SinglePhysics/BlockWallCollapse__bg066__WbL3LJ_trajectory.zip",
+   "size": 415290562,
+   "tier": "B1"
+  },
+  "CartMove__bg001__ZCUfbs_trajectory": {
+   "repo": "PhysInOneP06/PhysInOneP06",
+   "path": "Train/SinglePhysics/CartMove__bg001__ZCUfbs_trajectory.zip",
+   "size": 1002688937,
+   "tier": "B1"
+  },
+  "CatapultLaunch__bg002__qrbjai_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/SinglePhysics/CatapultLaunch__bg002__qrbjai_trajectory.zip",
+   "size": 770803996,
+   "tier": "B1"
+  },
+  "CatapultLaunch__bg002__sTrHLQ_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/SinglePhysics/CatapultLaunch__bg002__sTrHLQ_trajectory.zip",
+   "size": 987453208,
+   "tier": "B1"
+  },
+  "ChainSuspend__bg002__8Fx5Yo_trajectory": {
+   "repo": "PhysInOneP11/PhysInOneP11",
+   "path": "Train/SinglePhysics/ChainSuspend__bg002__8Fx5Yo_trajectory.zip",
+   "size": 665572072,
+   "tier": "B1"
+  },
+  "ChainSuspend__bg002__TuUzfl_trajectory": {
+   "repo": "PhysInOneP06/PhysInOneP06",
+   "path": "Train/SinglePhysics/ChainSuspend__bg002__TuUzfl_trajectory.zip",
+   "size": 567711270,
+   "tier": "B1"
+  },
+  "ChainSuspend__bg002__xXftTs_trajectory": {
+   "repo": "PhysInOneP12/PhysInOneP12",
+   "path": "Train/SinglePhysics/ChainSuspend__bg002__xXftTs_trajectory.zip",
+   "size": 608397142,
+   "tier": "B1"
+  },
+  "ChainSuspend__bg019__QsuH1n_trajectory": {
+   "repo": "PhysInOneP07/PhysInOneP07",
+   "path": "Train/SinglePhysics/ChainSuspend__bg019__QsuH1n_trajectory.zip",
+   "size": 337918581,
+   "tier": "B1"
+  },
+  "ChainSuspend__bg140__m6zI4A_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/SinglePhysics/ChainSuspend__bg140__m6zI4A_trajectory.zip",
+   "size": 810004624,
+   "tier": "B1"
+  },
+  "CrankPush__bg062__6KfcZZ_trajectory": {
+   "repo": "PhysInOneP07/PhysInOneP07",
+   "path": "Train/SinglePhysics/CrankPush__bg062__6KfcZZ_trajectory.zip",
+   "size": 545112279,
+   "tier": "B1"
+  },
+  "CrankPush__bg062__ICy6zp_trajectory": {
+   "repo": "PhysInOneP04/PhysInOneP04",
+   "path": "Train/SinglePhysics/CrankPush__bg062__ICy6zp_trajectory.zip",
+   "size": 540416531,
+   "tier": "B1"
+  },
+  "CrankPush__bg062__OZvnHZ_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/SinglePhysics/CrankPush__bg062__OZvnHZ_trajectory.zip",
+   "size": 598186093,
+   "tier": "B1"
+  },
+  "DoublePendulum__bg001__jvrmkm_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/SinglePhysics/DoublePendulum__bg001__jvrmkm_trajectory.zip",
+   "size": 1314846590,
+   "tier": "B1"
+  },
+  "DoublePendulum__bg063__WGWjOF_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/SinglePhysics/DoublePendulum__bg063__WGWjOF_trajectory.zip",
+   "size": 505982042,
+   "tier": "B1"
+  },
+  "DoublePendulum__bg071__9bALdA_trajectory": {
+   "repo": "PhysInOneP06/PhysInOneP06",
+   "path": "Train/SinglePhysics/DoublePendulum__bg071__9bALdA_trajectory.zip",
+   "size": 595125140,
+   "tier": "B1"
+  },
+  "DoublePendulum__bg071__zbSTYN_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/SinglePhysics/DoublePendulum__bg071__zbSTYN_trajectory.zip",
+   "size": 501555898,
+   "tier": "B1"
+  },
+  "ElasticCouple__bg062__XfWifG_trajectory": {
+   "repo": "PhysInOneP09/PhysInOneP09",
+   "path": "Train/SinglePhysics/ElasticCouple__bg062__XfWifG_trajectory.zip",
+   "size": 785832574,
+   "tier": "B1"
+  },
+  "ElasticCouple__bg062__a2alon_trajectory": {
+   "repo": "PhysInOneP03/PhysInOneP03",
+   "path": "Train/SinglePhysics/ElasticCouple__bg062__a2alon_trajectory.zip",
+   "size": 807793017,
+   "tier": "B1"
+  },
+  "FrictionStop__bg002__LAWCbO_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/SinglePhysics/FrictionStop__bg002__LAWCbO_trajectory.zip",
+   "size": 754932519,
+   "tier": "B1"
+  },
+  "FrictionStop__bg002__qTqR4n_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/SinglePhysics/FrictionStop__bg002__qTqR4n_trajectory.zip",
+   "size": 762615203,
+   "tier": "B1"
+  },
+  "FrictionStop__bg140__4mfw3O_trajectory": {
+   "repo": "PhysInOneP03/PhysInOneP03",
+   "path": "Train/SinglePhysics/FrictionStop__bg140__4mfw3O_trajectory.zip",
+   "size": 712855077,
+   "tier": "B1"
+  },
+  "ImpactFracture__bg002__66uKL7_trajectory": {
+   "repo": "PhysInOneP11/PhysInOneP11",
+   "path": "Train/SinglePhysics/ImpactFracture__bg002__66uKL7_trajectory.zip",
+   "size": 1070507604,
+   "tier": "B1"
+  },
+  "ImpactFracture__bg002__pBttsy_trajectory": {
+   "repo": "PhysInOneP12/PhysInOneP12",
+   "path": "Train/SinglePhysics/ImpactFracture__bg002__pBttsy_trajectory.zip",
+   "size": 1169150778,
+   "tier": "B1"
+  },
+  "ImpactFracture__bg140__RXyH4N_trajectory": {
+   "repo": "PhysInOneP14/PhysInOneP14",
+   "path": "Train/SinglePhysics/ImpactFracture__bg140__RXyH4N_trajectory.zip",
+   "size": 486092914,
+   "tier": "B1"
+  },
+  "LinCarryInertia__bg002__VlhSBB_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/SinglePhysics/LinCarryInertia__bg002__VlhSBB_trajectory.zip",
+   "size": 850535829,
+   "tier": "B1"
+  },
+  "LinCarryInertia__bg002__p1m4Eh_trajectory": {
+   "repo": "PhysInOneP15/PhysInOneP15",
+   "path": "Train/SinglePhysics/LinCarryInertia__bg002__p1m4Eh_trajectory.zip",
+   "size": 890992493,
+   "tier": "B1"
+  },
+  "LinCarryInertia__bg110__HR0AAu_trajectory": {
+   "repo": "PhysInOneP15/PhysInOneP15",
+   "path": "Train/SinglePhysics/LinCarryInertia__bg110__HR0AAu_trajectory.zip",
+   "size": 859900447,
+   "tier": "B1"
+  },
+  "MovingHitsFixed__bg076__kPEdwW_trajectory": {
+   "repo": "PhysInOneP02/PhysInOneP02",
+   "path": "Train/SinglePhysics/MovingHitsFixed__bg076__kPEdwW_trajectory.zip",
+   "size": 235717971,
+   "tier": "B1"
+  },
+  "MovingHitsFixed__bg076__qPGMA4_trajectory": {
+   "repo": "PhysInOneP02/PhysInOneP02",
+   "path": "Train/SinglePhysics/MovingHitsFixed__bg076__qPGMA4_trajectory.zip",
+   "size": 263327961,
+   "tier": "B1"
+  },
+  "MovingHitsFixed__bg140__Ke0TUi_trajectory": {
+   "repo": "PhysInOneP12/PhysInOneP12",
+   "path": "Train/SinglePhysics/MovingHitsFixed__bg140__Ke0TUi_trajectory.zip",
+   "size": 503164307,
+   "tier": "B1"
+  },
+  "MovingHitsFixed__bg140__s8wqzn_trajectory": {
+   "repo": "PhysInOneP02/PhysInOneP02",
+   "path": "Train/SinglePhysics/MovingHitsFixed__bg140__s8wqzn_trajectory.zip",
+   "size": 462360207,
+   "tier": "B1"
+  },
+  "AccelConcaveSpin_CartMove__bg064__b3ZHBQ_trajectory": {
+   "repo": "PhysInOneP11/PhysInOneP11",
+   "path": "Train/DoublePhysics/AccelConcaveSpin_CartMove__bg064__b3ZHBQ_trajectory.zip",
+   "size": 865311434,
+   "tier": "B2"
+  },
+  "AccelConcaveSpin_RotBoardInertia__bg099__jMk4Wq_trajectory": {
+   "repo": "PhysInOneP12/PhysInOneP12",
+   "path": "Train/DoublePhysics/AccelConcaveSpin_RotBoardInertia__bg099__jMk4Wq_trajectory.zip",
+   "size": 997763253,
+   "tier": "B2"
+  },
+  "AccelConcaveSpin_RotBoardInertia__bg099__vDql58_trajectory": {
+   "repo": "PhysInOneP11/PhysInOneP11",
+   "path": "Train/DoublePhysics/AccelConcaveSpin_RotBoardInertia__bg099__vDql58_trajectory.zip",
+   "size": 1292636165,
+   "tier": "B2"
+  },
+  "AccelPanelSpin_ElasticCouple__bg078__FK45FM_trajectory": {
+   "repo": "PhysInOneP04/PhysInOneP04",
+   "path": "Train/DoublePhysics/AccelPanelSpin_ElasticCouple__bg078__FK45FM_trajectory.zip",
+   "size": 426683125,
+   "tier": "B2"
+  },
+  "AccelPanelSpin_RotTurnableInertia__bg072__Je5tXT_trajectory": {
+   "repo": "PhysInOneP07/PhysInOneP07",
+   "path": "Train/DoublePhysics/AccelPanelSpin_RotTurnableInertia__bg072__Je5tXT_trajectory.zip",
+   "size": 385155063,
+   "tier": "B2"
+  },
+  "AccelPanelSpin_SpringCompress__bg074__ITz2nU_trajectory": {
+   "repo": "PhysInOneP09/PhysInOneP09",
+   "path": "Train/DoublePhysics/AccelPanelSpin_SpringCompress__bg074__ITz2nU_trajectory.zip",
+   "size": 423277075,
+   "tier": "B2"
+  },
+  "CatapultLaunch_StickSupportFail__bg122__LxgHds_trajectory": {
+   "repo": "PhysInOneP04/PhysInOneP04",
+   "path": "Train/DoublePhysics/CatapultLaunch_StickSupportFail__bg122__LxgHds_trajectory.zip",
+   "size": 419063930,
+   "tier": "B2"
+  },
+  "ElasticCouple_DoublePendulum__bg078__1Wq889_trajectory": {
+   "repo": "PhysInOneP07/PhysInOneP07",
+   "path": "Train/DoublePhysics/ElasticCouple_DoublePendulum__bg078__1Wq889_trajectory.zip",
+   "size": 705393891,
+   "tier": "B2"
+  },
+  "ElasticCouple_RotBoardInertia__bg069__z25Gs7_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/DoublePhysics/ElasticCouple_RotBoardInertia__bg069__z25Gs7_trajectory.zip",
+   "size": 629253890,
+   "tier": "B2"
+  },
+  "ElasticCouple_RotTurnableInertia__bg007__4usadT_trajectory": {
+   "repo": "PhysInOneP03/PhysInOneP03",
+   "path": "Train/DoublePhysics/ElasticCouple_RotTurnableInertia__bg007__4usadT_trajectory.zip",
+   "size": 1013492917,
+   "tier": "B2"
+  },
+  "ElasticCouple_SeesawCenterPivot__bg100__c1g6mF_trajectory": {
+   "repo": "PhysInOneP03/PhysInOneP03",
+   "path": "Train/DoublePhysics/ElasticCouple_SeesawCenterPivot__bg100__c1g6mF_trajectory.zip",
+   "size": 508334167,
+   "tier": "B2"
+  },
+  "FrictionStop_CrankPush__bg084__bKhzSJ_trajectory": {
+   "repo": "PhysInOneP06/PhysInOneP06",
+   "path": "Train/DoublePhysics/FrictionStop_CrankPush__bg084__bKhzSJ_trajectory.zip",
+   "size": 895603523,
+   "tier": "B2"
+  },
+  "FrictionStop_StickSupportFail__bg065__p9FY58_trajectory": {
+   "repo": "PhysInOneP06/PhysInOneP06",
+   "path": "Train/DoublePhysics/FrictionStop_StickSupportFail__bg065__p9FY58_trajectory.zip",
+   "size": 295599199,
+   "tier": "B2"
+  },
+  "ImpactFracture_RotTurnableInertia__bg052__CRxMCR_trajectory": {
+   "repo": "PhysInOneP11/PhysInOneP11",
+   "path": "Train/DoublePhysics/ImpactFracture_RotTurnableInertia__bg052__CRxMCR_trajectory.zip",
+   "size": 512270343,
+   "tier": "B2"
+  },
+  "ImpactFracture_RotTurnableInertia__bg052__Om2iUZ_trajectory": {
+   "repo": "PhysInOneP12/PhysInOneP12",
+   "path": "Train/DoublePhysics/ImpactFracture_RotTurnableInertia__bg052__Om2iUZ_trajectory.zip",
+   "size": 802322795,
+   "tier": "B2"
+  },
+  "MovingHitsFixed_AccelPanelSpin__bg001__N1vwnh_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/DoublePhysics/MovingHitsFixed_AccelPanelSpin__bg001__N1vwnh_trajectory.zip",
+   "size": 685760723,
+   "tier": "B2"
+  },
+  "MovingHitsMoving_AccelSurfaceSpin__bg139__qzBPxu_trajectory": {
+   "repo": "PhysInOneP11/PhysInOneP11",
+   "path": "Train/DoublePhysics/MovingHitsMoving_AccelSurfaceSpin__bg139__qzBPxu_trajectory.zip",
+   "size": 852297682,
+   "tier": "B2"
+  },
+  "MovingHitsMoving_BlockWallCollapse__bg002__Rtr01i_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/DoublePhysics/MovingHitsMoving_BlockWallCollapse__bg002__Rtr01i_trajectory.zip",
+   "size": 656915358,
+   "tier": "B2"
+  },
+  "MovingHitsFixed_FrictionStop_SeesawOffsetPivot__bg140__6eP2ZW_trajectory": {
+   "repo": "PhysInOneP04/PhysInOneP04",
+   "path": "Train/TriplePhysics/MovingHitsFixed_FrictionStop_SeesawOffsetPivot__bg140__6eP2ZW_trajectory.zip",
+   "size": 1582493800,
+   "tier": "C"
+  },
+  "MovingHitsFixed_ImpactFracture_RotTurnableInertia__bg052__3KwkqL_trajectory": {
+   "repo": "PhysInOneP13/PhysInOneP13",
+   "path": "Train/TriplePhysics/MovingHitsFixed_ImpactFracture_RotTurnableInertia__bg052__3KwkqL_trajectory.zip",
+   "size": 353867180,
+   "tier": "C"
+  },
+  "MovingHitsFixed_MovingHitsMoving_AccelConcaveSpin__bg140__H6IluA_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/TriplePhysics/MovingHitsFixed_MovingHitsMoving_AccelConcaveSpin__bg140__H6IluA_trajectory.zip",
+   "size": 920270352,
+   "tier": "C"
+  },
+  "MovingHitsFixed_MovingHitsMoving_DoublePendulum__bg077__TZVcD4_trajectory": {
+   "repo": "PhysInOneP04/PhysInOneP04",
+   "path": "Train/TriplePhysics/MovingHitsFixed_MovingHitsMoving_DoublePendulum__bg077__TZVcD4_trajectory.zip",
+   "size": 765542282,
+   "tier": "C"
+  },
+  "MovingHitsFixed_MovingHitsMoving_DoublePendulum__bg077__xNuOrW_trajectory": {
+   "repo": "PhysInOneP12/PhysInOneP12",
+   "path": "Train/TriplePhysics/MovingHitsFixed_MovingHitsMoving_DoublePendulum__bg077__xNuOrW_trajectory.zip",
+   "size": 768162620,
+   "tier": "C"
+  },
+  "MovingHitsFixed_MovingHitsMoving_UniformSurfaceSpin__bg140__gWapJV_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/TriplePhysics/MovingHitsFixed_MovingHitsMoving_UniformSurfaceSpin__bg140__gWapJV_trajectory.zip",
+   "size": 1244458141,
+   "tier": "C"
+  },
+  "MovingHitsFixed_MovingHitsStationary_AccelSurfaceSpin__bg140__050iBC_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/TriplePhysics/MovingHitsFixed_MovingHitsStationary_AccelSurfaceSpin__bg140__050iBC_trajectory.zip",
+   "size": 971413735,
+   "tier": "C"
+  },
+  "MovingHitsFixed_MovingHitsStationary_SpringCompress__bg002__iOEEc5_trajectory": {
+   "repo": "PhysInOneP09/PhysInOneP09",
+   "path": "Train/TriplePhysics/MovingHitsFixed_MovingHitsStationary_SpringCompress__bg002__iOEEc5_trajectory.zip",
+   "size": 823537913,
+   "tier": "C"
+  },
+  "MovingHitsFixed_MovingHitsStationary_SpringboardRebound__bg002__3ZLDjQ_trajectory": {
+   "repo": "PhysInOneP01/PhysInOneP01",
+   "path": "Train/TriplePhysics/MovingHitsFixed_MovingHitsStationary_SpringboardRebound__bg002__3ZLDjQ_trajectory.zip",
+   "size": 809875212,
+   "tier": "C"
+  },
+  "MovingHitsFixed_MovingHitsStationary_SpringboardRebound__bg002__PBKHjc_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/TriplePhysics/MovingHitsFixed_MovingHitsStationary_SpringboardRebound__bg002__PBKHjc_trajectory.zip",
+   "size": 807759762,
+   "tier": "C"
+  },
+  "MovingHitsFixed_MovingHitsStationary_UniformSurfaceSpin__bg071__Uv4axY_trajectory": {
+   "repo": "PhysInOneP02/PhysInOneP02",
+   "path": "Train/TriplePhysics/MovingHitsFixed_MovingHitsStationary_UniformSurfaceSpin__bg071__Uv4axY_trajectory.zip",
+   "size": 556198363,
+   "tier": "C"
+  },
+  "MovingHitsFixed_RollDownSlope_UniformPanelSpin__bg073__b6qn4R_trajectory": {
+   "repo": "PhysInOneP01/PhysInOneP01",
+   "path": "Train/TriplePhysics/MovingHitsFixed_RollDownSlope_UniformPanelSpin__bg073__b6qn4R_trajectory.zip",
+   "size": 436160273,
+   "tier": "C"
+  },
+  "MovingHitsFixed_RollUpSlope_AccelSurfaceSpin__bg088__EtOyOP_trajectory": {
+   "repo": "PhysInOneP06/PhysInOneP06",
+   "path": "Train/TriplePhysics/MovingHitsFixed_RollUpSlope_AccelSurfaceSpin__bg088__EtOyOP_trajectory.zip",
+   "size": 1132590864,
+   "tier": "C"
+  },
+  "MovingHitsFixed_RollUpSlope_SpringboardRebound__bg140__0ZMtCT_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/TriplePhysics/MovingHitsFixed_RollUpSlope_SpringboardRebound__bg140__0ZMtCT_trajectory.zip",
+   "size": 1002158204,
+   "tier": "C"
+  },
+  "MovingHitsFixed_RollUpSlope_SpringboardRebound__bg140__z8LypT_trajectory": {
+   "repo": "PhysInOneP06/PhysInOneP06",
+   "path": "Train/TriplePhysics/MovingHitsFixed_RollUpSlope_SpringboardRebound__bg140__z8LypT_trajectory.zip",
+   "size": 911532881,
+   "tier": "C"
+  },
+  "MovingHitsFixed_RollUpSlope_UniformPanelSpin__bg140__PdhUIY_trajectory": {
+   "repo": "PhysInOneP13/PhysInOneP13",
+   "path": "Train/TriplePhysics/MovingHitsFixed_RollUpSlope_UniformPanelSpin__bg140__PdhUIY_trajectory.zip",
+   "size": 893890388,
+   "tier": "C"
+  },
+  "MovingHitsMoving_FrictionStop_CrankPush__bg084__BgmRH0_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/TriplePhysics/MovingHitsMoving_FrictionStop_CrankPush__bg084__BgmRH0_trajectory.zip",
+   "size": 953800161,
+   "tier": "C"
+  },
+  "MovingHitsMoving_ImpactFracture_DoublePendulum__bg077__ne7nSp_trajectory": {
+   "repo": "PhysInOneP13/PhysInOneP13",
+   "path": "Train/TriplePhysics/MovingHitsMoving_ImpactFracture_DoublePendulum__bg077__ne7nSp_trajectory.zip",
+   "size": 609904428,
+   "tier": "C"
+  },
+  "MovingHitsMoving_ObliqueProjectile_ElasticCouple__bg062__6mvI0S_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/TriplePhysics/MovingHitsMoving_ObliqueProjectile_ElasticCouple__bg062__6mvI0S_trajectory.zip",
+   "size": 718591839,
+   "tier": "C"
+  },
+  "MovingHitsMoving_ObliqueProjectile_LinCarryInertia__bg076__ro9T2N_trajectory": {
+   "repo": "PhysInOneP03/PhysInOneP03",
+   "path": "Train/TriplePhysics/MovingHitsMoving_ObliqueProjectile_LinCarryInertia__bg076__ro9T2N_trajectory.zip",
+   "size": 409868720,
+   "tier": "C"
+  },
+  "MovingHitsMoving_ObliqueProjectile_SeesawCenterPivot__bg079__HXAxZH_trajectory": {
+   "repo": "PhysInOneP07/PhysInOneP07",
+   "path": "Train/TriplePhysics/MovingHitsMoving_ObliqueProjectile_SeesawCenterPivot__bg079__HXAxZH_trajectory.zip",
+   "size": 383942516,
+   "tier": "C"
+  },
+  "MovingHitsMoving_RollUpSlope_StickSupportFail__bg088__RKiUHY_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/TriplePhysics/MovingHitsMoving_RollUpSlope_StickSupportFail__bg088__RKiUHY_trajectory.zip",
+   "size": 505212718,
+   "tier": "C"
+  },
+  "MovingHitsMoving_SpringStretch_ImpactFracture__bg012__HG5Y0e_trajectory": {
+   "repo": "PhysInOneP15/PhysInOneP15",
+   "path": "Train/TriplePhysics/MovingHitsMoving_SpringStretch_ImpactFracture__bg012__HG5Y0e_trajectory.zip",
+   "size": 522981946,
+   "tier": "C"
+  },
+  "AccelConcaveSpin_BalloonLift__bg002__abYCnE_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/DoublePhysics/AccelConcaveSpin_BalloonLift__bg002__abYCnE_trajectory.zip",
+   "size": 1209974963,
+   "tier": "D"
+  },
+  "AccelConcaveSpin_BalloonTether__bg001__kmX61m_trajectory": {
+   "repo": "PhysInOneP03/PhysInOneP03",
+   "path": "Train/DoublePhysics/AccelConcaveSpin_BalloonTether__bg001__kmX61m_trajectory.zip",
+   "size": 1685841514,
+   "tier": "D"
+  },
+  "AccelPanelSpin_BalloonFloat_BalloonLift__bg001__qU2t0r_trajectory": {
+   "repo": "PhysInOneP04/PhysInOneP04",
+   "path": "Train/TriplePhysics/AccelPanelSpin_BalloonFloat_BalloonLift__bg001__qU2t0r_trajectory.zip",
+   "size": 662225008,
+   "tier": "D"
+  },
+  "AccelPanelSpin_BalloonFloat__bg001__eBlnqJ_trajectory": {
+   "repo": "PhysInOneP07/PhysInOneP07",
+   "path": "Train/DoublePhysics/AccelPanelSpin_BalloonFloat__bg001__eBlnqJ_trajectory.zip",
+   "size": 705939204,
+   "tier": "D"
+  },
+  "BalloonFloat_CatapultLaunch__bg080__Arxz5E_trajectory": {
+   "repo": "PhysInOneP04/PhysInOneP04",
+   "path": "Train/DoublePhysics/BalloonFloat_CatapultLaunch__bg080__Arxz5E_trajectory.zip",
+   "size": 507357209,
+   "tier": "D"
+  },
+  "BalloonFloat_CatapultLaunch__bg080__U0XB4u_trajectory": {
+   "repo": "PhysInOneP09/PhysInOneP09",
+   "path": "Train/DoublePhysics/BalloonFloat_CatapultLaunch__bg080__U0XB4u_trajectory.zip",
+   "size": 447810399,
+   "tier": "D"
+  },
+  "BalloonFloat_ChainSuspend__bg109__utor2V_trajectory": {
+   "repo": "PhysInOneP13/PhysInOneP13",
+   "path": "Train/DoublePhysics/BalloonFloat_ChainSuspend__bg109__utor2V_trajectory.zip",
+   "size": 691108290,
+   "tier": "D"
+  },
+  "BalloonFloat_DoublePendulum__bg072__4h3b5X_trajectory": {
+   "repo": "PhysInOneP04/PhysInOneP04",
+   "path": "Train/DoublePhysics/BalloonFloat_DoublePendulum__bg072__4h3b5X_trajectory.zip",
+   "size": 566880797,
+   "tier": "D"
+  },
+  "BalloonFloat_RotTurnableInertia__bg071__u0iZR7_trajectory": {
+   "repo": "PhysInOneP01/PhysInOneP01",
+   "path": "Train/DoublePhysics/BalloonFloat_RotTurnableInertia__bg071__u0iZR7_trajectory.zip",
+   "size": 873608303,
+   "tier": "D"
+  },
+  "BalloonLift_CartMove__bg071__x6qTEj_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/DoublePhysics/BalloonLift_CartMove__bg071__x6qTEj_trajectory.zip",
+   "size": 919274444,
+   "tier": "D"
+  },
+  "BalloonLift_DoublePendulum__bg089__Eu4CK9_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/DoublePhysics/BalloonLift_DoublePendulum__bg089__Eu4CK9_trajectory.zip",
+   "size": 716789359,
+   "tier": "D"
+  },
+  "BalloonLift_RotTurnableInertia__bg001__6baEK0_trajectory": {
+   "repo": "PhysInOneP01/PhysInOneP01",
+   "path": "Train/DoublePhysics/BalloonLift_RotTurnableInertia__bg001__6baEK0_trajectory.zip",
+   "size": 1093679107,
+   "tier": "D"
+  },
+  "BalloonTether_ChainSuspend__bg109__cAAZeM_trajectory": {
+   "repo": "PhysInOneP04/PhysInOneP04",
+   "path": "Train/DoublePhysics/BalloonTether_ChainSuspend__bg109__cAAZeM_trajectory.zip",
+   "size": 865247534,
+   "tier": "D"
+  },
+  "BalloonTether_SimplePendulum__bg069__X5F65N_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/DoublePhysics/BalloonTether_SimplePendulum__bg069__X5F65N_trajectory.zip",
+   "size": 629497766,
+   "tier": "D"
+  },
+  "ImpactFracture_BalloonFloat__bg080__fynJ8b_trajectory": {
+   "repo": "PhysInOneP11/PhysInOneP11",
+   "path": "Train/DoublePhysics/ImpactFracture_BalloonFloat__bg080__fynJ8b_trajectory.zip",
+   "size": 510995233,
+   "tier": "D"
+  },
+  "MagnetAttract_AccelConcaveSpin__bg062__aXYule_trajectory": {
+   "repo": "PhysInOneP12/PhysInOneP12",
+   "path": "Train/DoublePhysics/MagnetAttract_AccelConcaveSpin__bg062__aXYule_trajectory.zip",
+   "size": 617182040,
+   "tier": "D"
+  },
+  "MagnetAttract_BlockWallCollapse__bg139__gQXRl3_trajectory": {
+   "repo": "PhysInOneP14/PhysInOneP14",
+   "path": "Train/DoublePhysics/MagnetAttract_BlockWallCollapse__bg139__gQXRl3_trajectory.zip",
+   "size": 405810887,
+   "tier": "D"
+  },
+  "MagnetAttract_CartMove__bg073__n1KXMK_trajectory": {
+   "repo": "PhysInOneP14/PhysInOneP14",
+   "path": "Train/DoublePhysics/MagnetAttract_CartMove__bg073__n1KXMK_trajectory.zip",
+   "size": 520446937,
+   "tier": "D"
+  },
+  "MagnetAttract_CrankPush__bg140__6cZSOx_trajectory": {
+   "repo": "PhysInOneP14/PhysInOneP14",
+   "path": "Train/DoublePhysics/MagnetAttract_CrankPush__bg140__6cZSOx_trajectory.zip",
+   "size": 291943950,
+   "tier": "D"
+  },
+  "MagnetAttract_CrankPush__bg140__r4tO25_trajectory": {
+   "repo": "PhysInOneP12/PhysInOneP12",
+   "path": "Train/DoublePhysics/MagnetAttract_CrankPush__bg140__r4tO25_trajectory.zip",
+   "size": 283558876,
+   "tier": "D"
+  },
+  "MagnetAttract_DoublePendulum__bg002__CEaWIn_trajectory": {
+   "repo": "PhysInOneP14/PhysInOneP14",
+   "path": "Train/DoublePhysics/MagnetAttract_DoublePendulum__bg002__CEaWIn_trajectory.zip",
+   "size": 929280796,
+   "tier": "D"
+  },
+  "MagnetAttract_ElasticCouple__bg107__L7a4XT_trajectory": {
+   "repo": "PhysInOneP15/PhysInOneP15",
+   "path": "Train/DoublePhysics/MagnetAttract_ElasticCouple__bg107__L7a4XT_trajectory.zip",
+   "size": 846851657,
+   "tier": "D"
+  },
+  "MagnetAttract_RotBoardInertia__bg086__ccHlBd_trajectory": {
+   "repo": "PhysInOneP14/PhysInOneP14",
+   "path": "Train/DoublePhysics/MagnetAttract_RotBoardInertia__bg086__ccHlBd_trajectory.zip",
+   "size": 836850244,
+   "tier": "D"
+  },
+  "MagnetAttract_SpringStretch__bg067__t1THSR_trajectory": {
+   "repo": "PhysInOneP11/PhysInOneP11",
+   "path": "Train/DoublePhysics/MagnetAttract_SpringStretch__bg067__t1THSR_trajectory.zip",
+   "size": 321167648,
+   "tier": "D"
+  },
+  "MagnetAttract_UniformConcaveSpin__bg062__yjJh6f_trajectory": {
+   "repo": "PhysInOneP14/PhysInOneP14",
+   "path": "Train/DoublePhysics/MagnetAttract_UniformConcaveSpin__bg062__yjJh6f_trajectory.zip",
+   "size": 449076551,
+   "tier": "D"
+  },
+  "MagnetAttract_UniformConcaveSpin__bg062__zeYfga_trajectory": {
+   "repo": "PhysInOneP12/PhysInOneP12",
+   "path": "Train/DoublePhysics/MagnetAttract_UniformConcaveSpin__bg062__zeYfga_trajectory.zip",
+   "size": 453543203,
+   "tier": "D"
+  },
+  "MagnetRepel_AccelConcaveSpin__bg071__1bKmbE_trajectory": {
+   "repo": "PhysInOneP14/PhysInOneP14",
+   "path": "Train/DoublePhysics/MagnetRepel_AccelConcaveSpin__bg071__1bKmbE_trajectory.zip",
+   "size": 631686921,
+   "tier": "D"
+  },
+  "MagnetRepel_ChainSuspend__bg095__Q2ICfL_trajectory": {
+   "repo": "PhysInOneP13/PhysInOneP13",
+   "path": "Train/DoublePhysics/MagnetRepel_ChainSuspend__bg095__Q2ICfL_trajectory.zip",
+   "size": 509296258,
+   "tier": "D"
+  },
+  "MagnetRepel_RotBoardInertia__bg069__4DRpVE_trajectory": {
+   "repo": "PhysInOneP12/PhysInOneP12",
+   "path": "Train/DoublePhysics/MagnetRepel_RotBoardInertia__bg069__4DRpVE_trajectory.zip",
+   "size": 184972757,
+   "tier": "D"
+  },
+  "MagnetRepel_RotBoardInertia__bg069__4eTxm2_trajectory": {
+   "repo": "PhysInOneP13/PhysInOneP13",
+   "path": "Train/DoublePhysics/MagnetRepel_RotBoardInertia__bg069__4eTxm2_trajectory.zip",
+   "size": 221144370,
+   "tier": "D"
+  },
+  "MagnetRepel_SeesawOffsetPivot__bg136__O2514L_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/DoublePhysics/MagnetRepel_SeesawOffsetPivot__bg136__O2514L_trajectory.zip",
+   "size": 640973376,
+   "tier": "D"
+  },
+  "MagnetRepel_UniformConcaveSpin__bg071__XtlXpn_trajectory": {
+   "repo": "PhysInOneP01/PhysInOneP01",
+   "path": "Train/DoublePhysics/MagnetRepel_UniformConcaveSpin__bg071__XtlXpn_trajectory.zip",
+   "size": 990254195,
+   "tier": "D"
+  },
+  "MagnetRepel_UniformPanelSpin__bg046__v4x9Uz_trajectory": {
+   "repo": "PhysInOneP15/PhysInOneP15",
+   "path": "Train/DoublePhysics/MagnetRepel_UniformPanelSpin__bg046__v4x9Uz_trajectory.zip",
+   "size": 341278976,
+   "tier": "D"
+  },
+  "MagnetRepel_UniformSurfaceSpin__bg088__i4x3kC_trajectory": {
+   "repo": "PhysInOneP15/PhysInOneP15",
+   "path": "Train/DoublePhysics/MagnetRepel_UniformSurfaceSpin__bg088__i4x3kC_trajectory.zip",
+   "size": 402270702,
+   "tier": "D"
+  },
+  "MovingHitsFixed_BalloonFloat_LinCarryInertia__bg140__vVNI1k_trajectory": {
+   "repo": "PhysInOneP02/PhysInOneP02",
+   "path": "Train/TriplePhysics/MovingHitsFixed_BalloonFloat_LinCarryInertia__bg140__vVNI1k_trajectory.zip",
+   "size": 618533807,
+   "tier": "D"
+  },
+  "MovingHitsFixed_ObliqueProjectile_BalloonLift__bg139__sExHWr_trajectory": {
+   "repo": "PhysInOneP02/PhysInOneP02",
+   "path": "Train/TriplePhysics/MovingHitsFixed_ObliqueProjectile_BalloonLift__bg139__sExHWr_trajectory.zip",
+   "size": 753256555,
+   "tier": "D"
+  },
+  "MovingHitsFixed_RollUpSlope_MagnetAttract__bg001__bP7OsL_trajectory": {
+   "repo": "PhysInOneP13/PhysInOneP13",
+   "path": "Train/TriplePhysics/MovingHitsFixed_RollUpSlope_MagnetAttract__bg001__bP7OsL_trajectory.zip",
+   "size": 507107814,
+   "tier": "D"
+  },
+  "MovingHitsFixed_WindPushOppDir_ObliqueProjectile__bg001__YjrPBH_trajectory": {
+   "repo": "PhysInOneP13/PhysInOneP13",
+   "path": "Train/TriplePhysics/MovingHitsFixed_WindPushOppDir_ObliqueProjectile__bg001__YjrPBH_trajectory.zip",
+   "size": 663458562,
+   "tier": "D"
+  },
+  "MovingHitsFixed_WindPushOppDir__bg001__6Nt7NC_trajectory": {
+   "repo": "PhysInOneP09/PhysInOneP09",
+   "path": "Train/DoublePhysics/MovingHitsFixed_WindPushOppDir__bg001__6Nt7NC_trajectory.zip",
+   "size": 859318622,
+   "tier": "D"
+  },
+  "MovingHitsMoving_BalloonTether__bg101__8fd4WY_trajectory": {
+   "repo": "PhysInOneP09/PhysInOneP09",
+   "path": "Train/DoublePhysics/MovingHitsMoving_BalloonTether__bg101__8fd4WY_trajectory.zip",
+   "size": 323167956,
+   "tier": "D"
+  },
+  "DropInLiquid__bg576__5Dn0iF_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/SinglePhysics/DropInLiquid__bg576__5Dn0iF_trajectory.zip",
+   "size": 666579184,
+   "tier": "A"
+  },
+  "LiquidMultiTransfers_LiquidRise_LiquidTension__bg538__NSfyCd_trajectory": {
+   "repo": "PhysInOneP16/PhysInOneP16",
+   "path": "Train/TriplePhysics/LiquidMultiTransfers_LiquidRise_LiquidTension__bg538__NSfyCd_trajectory.zip",
+   "size": 989605960,
+   "tier": "A"
+  },
+  "CartMove__bg001__WaTOdI_trajectory": {
+   "repo": "PhysInOneP05/PhysInOneP05",
+   "path": "Train/SinglePhysics/CartMove__bg001__WaTOdI_trajectory.zip",
+   "size": 1026182814,
+   "tier": "B1"
+  },
+  "CrankPush__bg001__4LCqMm_trajectory": {
+   "repo": "PhysInOneP02/PhysInOneP02",
+   "path": "Train/SinglePhysics/CrankPush__bg001__4LCqMm_trajectory.zip",
+   "size": 916773983,
+   "tier": "B1"
+  },
+  "CrankPush__bg062__Bzd92q_trajectory": {
+   "repo": "PhysInOneP08/PhysInOneP08",
+   "path": "Train/SinglePhysics/CrankPush__bg062__Bzd92q_trajectory.zip",
+   "size": 691389365,
+   "tier": "B1"
+  },
+  "FrictionStop__bg140__NaAIR0_trajectory": {
+   "repo": "PhysInOneP06/PhysInOneP06",
+   "path": "Train/SinglePhysics/FrictionStop__bg140__NaAIR0_trajectory.zip",
+   "size": 751104378,
+   "tier": "B1"
+  },
+  "LinCarryInertia_SimplePendulum__bg006__tFX04g_trajectory": {
+   "repo": "PhysInOneP06/PhysInOneP06",
+   "path": "Train/DoublePhysics/LinCarryInertia_SimplePendulum__bg006__tFX04g_trajectory.zip",
+   "size": 467728928,
+   "tier": "B2"
+  },
+  "MovingHitsFixed_UniformPanelSpin__bg080__81QBhq_trajectory": {
+   "repo": "PhysInOneP06/PhysInOneP06",
+   "path": "Train/DoublePhysics/MovingHitsFixed_UniformPanelSpin__bg080__81QBhq_trajectory.zip",
+   "size": 438122545,
+   "tier": "B2"
+  },
+  "MovingHitsMoving_AccelSurfaceSpin__bg139__14LPN4_trajectory": {
+   "repo": "PhysInOneP09/PhysInOneP09",
+   "path": "Train/DoublePhysics/MovingHitsMoving_AccelSurfaceSpin__bg139__14LPN4_trajectory.zip",
+   "size": 872418618,
+   "tier": "B2"
+  },
+  "MovingHitsMoving_ObliqueProjectile_AccelConcaveSpin__bg001__FzfRQB_trajectory": {
+   "repo": "PhysInOneP12/PhysInOneP12",
+   "path": "Train/TriplePhysics/MovingHitsMoving_ObliqueProjectile_AccelConcaveSpin__bg001__FzfRQB_trajectory.zip",
+   "size": 786003332,
+   "tier": "C"
+  },
+  "BalloonLift_RotTurnableInertia__bg001__KGh8Al_trajectory": {
+   "repo": "PhysInOneP10/PhysInOneP10",
+   "path": "Train/DoublePhysics/BalloonLift_RotTurnableInertia__bg001__KGh8Al_trajectory.zip",
+   "size": 1062727095,
+   "tier": "D"
+  },
+  "BalloonTether_LinCarryInertia__bg069__eXEEGY_trajectory": {
+   "repo": "PhysInOneP07/PhysInOneP07",
+   "path": "Train/DoublePhysics/BalloonTether_LinCarryInertia__bg069__eXEEGY_trajectory.zip",
+   "size": 502517880,
+   "tier": "D"
+  },
+  "MagnetAttract_DoublePendulum__bg002__JKp2oO_trajectory": {
+   "repo": "PhysInOneP13/PhysInOneP13",
+   "path": "Train/DoublePhysics/MagnetAttract_DoublePendulum__bg002__JKp2oO_trajectory.zip",
+   "size": 883752482,
+   "tier": "D"
+  },
+  "MagnetRepel_AccelConcaveSpin__bg071__sUahKI_trajectory": {
+   "repo": "PhysInOneP14/PhysInOneP14",
+   "path": "Train/DoublePhysics/MagnetRepel_AccelConcaveSpin__bg071__sUahKI_trajectory.zip",
+   "size": 800258615,
+   "tier": "D"
+  },
+  "MagnetRepel_AccelPanelSpin__bg007__VwDjVc_trajectory": {
+   "repo": "PhysInOneP13/PhysInOneP13",
+   "path": "Train/DoublePhysics/MagnetRepel_AccelPanelSpin__bg007__VwDjVc_trajectory.zip",
+   "size": 395360637,
+   "tier": "D"
+  },
+  "ElasticFall__bg901__yILD1h_trajectory": {
+   "repo": "vLAR/PhysInOne",
+   "path": "Val/SinglePhysics/ElasticFall__bg901__yILD1h_trajectory.zip",
+   "size": 378605782,
+   "tier": "val"
+  },
+  "ElasticFall__bg902__LprpLy_trajectory": {
+   "repo": "vLAR/PhysInOne",
+   "path": "Val/SinglePhysics/ElasticFall__bg902__LprpLy_trajectory.zip",
+   "size": 553955088,
+   "tier": "val"
+  },
+  "ElasticFall__bg903__LgnL7g_trajectory": {
+   "repo": "vLAR/PhysInOne",
+   "path": "Val/SinglePhysics/ElasticFall__bg903__LgnL7g_trajectory.zip",
+   "size": 714958084,
+   "tier": "val"
+  },
+  "ElasticFall__bg904__Pc4mbA_trajectory": {
+   "repo": "vLAR/PhysInOne",
+   "path": "Val/SinglePhysics/ElasticFall__bg904__Pc4mbA_trajectory.zip",
+   "size": 1138966558,
+   "tier": "val"
+  },
+  "PlasticineFall__bg901__xOTgfh_trajectory": {
+   "repo": "vLAR/PhysInOne",
+   "path": "Val/SinglePhysics/PlasticineFall__bg901__xOTgfh_trajectory.zip",
+   "size": 384328448,
+   "tier": "val"
+  },
+  "PlasticineFall__bg902__Zo9l2N_trajectory": {
+   "repo": "vLAR/PhysInOne",
+   "path": "Val/SinglePhysics/PlasticineFall__bg902__Zo9l2N_trajectory.zip",
+   "size": 558256901,
+   "tier": "val"
+  },
+  "PlasticineFall__bg903__s684ty_trajectory": {
+   "repo": "vLAR/PhysInOne",
+   "path": "Val/SinglePhysics/PlasticineFall__bg903__s684ty_trajectory.zip",
+   "size": 723424250,
+   "tier": "val"
+  },
+  "PlasticineFall__bg904__1DAcp0_trajectory": {
+   "repo": "vLAR/PhysInOne",
+   "path": "Val/SinglePhysics/PlasticineFall__bg904__1DAcp0_trajectory.zip",
+   "size": 1132091059,
+   "tier": "val"
+  }
+ }
+}

@@ -1,0 +1,15 @@
+# AdaPixFlow -- held-out PhysInOne scenes (Tab. 3): 15 Test and 8 Val scenes, all views as input,
+# in-between prediction at spacings 2, 4, 8 and future prediction of 10 steps, motion window capped at 128 voxels.
+task: heldout
+checkpoint: checkpoints/adapixflow_physinone.pt
+output_root: ./experiments/
+data:
+  split: splits/physinone.json
+  fused_dirs: [data/physinone/fused]
+eval:
+  sets: [test, val]
+  spacings: [2, 4, 8]
+  horizon: 10
+  substeps: 8
+  max_side: 128
+  tiling: [margin, 64, 12]
