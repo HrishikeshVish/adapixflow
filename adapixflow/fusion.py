@@ -52,9 +52,10 @@ def moving_labels(meta: dict) -> set:
 
 
 def fuse_scene(cache_file: Path, out_dir: Path, voxel: float = 0.0125, stride: int = 1, max_extent: float = 4.0,
-               occ_min: int = 3, holdout: tuple = (), bounds_like: Path | None = None) -> str:
-    """Fuse every step of one scene cache into a sparse voxel grid (see the module docstring). Each step uses one video
-    frame (frame 2k for step k). `holdout` lists camera indices left out entirely (novel views). `bounds_like` takes the
+               occ_min: int = 3, holdout: tuple = (), bounds_like: Path | None = None, frame_step: int = 2) -> str:
+    """Fuse every step of one scene cache into a sparse voxel grid (see the module docstring). Step k uses video frame
+    frame_step * k: a PhysInOne step is two video frames, and the benchmark converters write every native frame twice, so
+    the default of 2 serves both. `holdout` lists camera indices left out entirely (novel views). `bounds_like` takes the
     grid origin and size from another fusion of the same scene, so that both cover the same region."""
     t_start = time.time()
     name = cache_file.name[:-4]
@@ -101,14 +102,14 @@ def fuse_scene(cache_file: Path, out_dir: Path, voxel: float = 0.0125, stride: i
         lo = np.where(hi - lo > max_extent, mid - max_extent / 2, lo)
         hi = np.minimum(hi, lo + max_extent)
         G = np.ceil((hi - lo) / voxel).astype(int)
-    N, Tl = int(np.prod(G)), T // 2
+    N, Tl = int(np.prod(G)), T // frame_step
     rng = np.random.default_rng(0)
     corners = np.array([[dx, dy, dz] for dx in (0, 1) for dy in (0, 1) for dz in (0, 1)])
 
     # occupancy (nearest voxel) and color / objectness (trilinear splat, normalized at occupied voxels), per step
     occ_parts, rgbo_parts, offsets, movers = [], [], [0], []
     for k in range(Tl):
-        t, Q, COL = 2 * k, [], []
+        t, Q, COL = frame_step * k, [], []
         for ci in cams:
             p, ok = unproject(ci, t)
             q = (p - lo) / voxel - 0.5  # grid coordinates g(y)
@@ -150,25 +151,30 @@ def fuse_scene(cache_file: Path, out_dir: Path, voxel: float = 0.0125, stride: i
         movers.append(np.stack(np.unravel_index(rng.choice(mv, min(64, len(mv)), replace=False), G), 1).tolist()
                       if len(mv) else [])
 
-    # UNSEEN: not occupied and hidden from every camera. The cameras are static, so voxel centers are projected once per
-    # camera (camera coordinates are separable over the grid axes) and tested against the depth of every step.
+    # UNSEEN: not occupied and hidden from every camera. Camera coordinates are separable over the grid axes, so the voxel
+    # centres are projected once per camera pose and tested against the depth of every step; a moving camera (PhysGaia's
+    # training views) is re-projected whenever its pose changes, a static one once.
     seen = np.zeros((Tl, G[0], G[1], (G[2] + 7) // 8), np.uint8)
     ax = [(np.arange(n) + 0.5) * voxel + lo[i] for i, n in enumerate(G)]
     for ci in cams:
-        R, tc = c2w[ci, 0, :3, :3], c2w[ci, 0, :3, 3]
-        a = [np.multiply.outer(ax[i] - tc[i], R[i]) for i in range(3)]
-
-        def cam(j):
-            return (a[0][:, None, None, j] + a[1][None, :, None, j] + a[2][None, None, :, j]).astype(np.float32).ravel()
-
-        zc = -cam(2)
-        zs = np.maximum(zc, 1e-6)
-        uu, vv = cam(0) / zs * f + W / 2, -cam(1) / zs * f + W / 2
-        sel = np.flatnonzero((zc > 1e-6) & (uu >= 0) & (uu < W) & (vv >= 0) & (vv < W)).astype(np.int32)
-        pix, zin = vv[sel].astype(np.int32) * W + uu[sel].astype(np.int32), zc[sel]
-        del zc, zs, uu, vv
+        last = None
         for k in range(Tl):
-            in_front = zin <= depth[ci, 2 * k].ravel().astype(np.float32)[pix] + 0.5 * voxel
+            Mk = c2w[ci, frame_step * k]
+            if last is None or not np.array_equal(Mk, last):
+                R, tc = Mk[:3, :3], Mk[:3, 3]
+                a = [np.multiply.outer(ax[i] - tc[i], R[i]) for i in range(3)]
+
+                def cam(j):
+                    return (a[0][:, None, None, j] + a[1][None, :, None, j] + a[2][None, None, :, j]).astype(np.float32).ravel()
+
+                zc = -cam(2)
+                zs = np.maximum(zc, 1e-6)
+                uu, vv = cam(0) / zs * f + W / 2, -cam(1) / zs * f + W / 2
+                sel = np.flatnonzero((zc > 1e-6) & (uu >= 0) & (uu < W) & (vv >= 0) & (vv < W)).astype(np.int32)
+                pix, zin = vv[sel].astype(np.int32) * W + uu[sel].astype(np.int32), zc[sel]
+                del zc, zs, uu, vv
+                last = np.array(Mk, copy=True)
+            in_front = zin <= depth[ci, frame_step * k].ravel().astype(np.float32)[pix] + 0.5 * voxel
             fr = np.zeros(N, bool)
             fr[sel[in_front]] = True
             seen[k] |= np.packbits(fr.reshape(G), axis=-1)

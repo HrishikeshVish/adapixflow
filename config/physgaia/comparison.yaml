@@ -1,0 +1,16 @@
+# AdaPixFlow zero-shot on PhysGaia (Tab. 2 and the per-scene Tab. 10): visco_bouncing_balls (scale 0.2, from frame 26), moving training cameras.
+# The released PhysInOne model, without retraining. Input fused without views 0 and 1, ground truth from all views,
+# the protocol of Tab. 1. Tab. 2 pools the motion subsets over the common subset of scenes (splits/physgaia.json).
+task: comparison
+checkpoint: checkpoints/adapixflow_physinone.pt
+output_root: ./experiments/physgaia/
+data:
+  split: splits/physgaia.json
+  fused_dirs: [data/physgaia/fused]
+  input_dir: data/physgaia/fused_holdout
+eval:
+  horizon: 10
+  substeps: 8
+  max_side: 512
+  tiling: [centered, 128, 64]
+  motion_split: splits/motion_split_physgaia.json   # GT-defined target subsets of the common scenes (Tab. 2)

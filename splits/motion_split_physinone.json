@@ -1,0 +1,570 @@
+{
+ "_about": "GT-only motion split of the comparison-scene targets (Tab. 9): per target, the F1@2 (%) of the oracle linear interpolation (in-between: best of centroid translation, rigid fit with slerped rotation and straight per-point paths from either observation; future: the same rules as constant-velocity extrapolation of the last two observed states). A target is linear if the oracle reaches 90. contact_step: the first step of a ground contact in future prediction (null: none).",
+ "threshold": 90.0,
+ "targets": {
+  "ElasticFall__bg903__LgnL7g_trajectory/inbetween_s4": {
+   "10": {
+    "oracle": 100.0
+   },
+   "11": {
+    "oracle": 100.0
+   },
+   "14": {
+    "oracle": 100.0
+   },
+   "15": {
+    "oracle": 100.0
+   },
+   "18": {
+    "oracle": 100.0
+   },
+   "19": {
+    "oracle": 100.0
+   },
+   "22": {
+    "oracle": 96.45
+   },
+   "23": {
+    "oracle": 94.807
+   },
+   "26": {
+    "oracle": 94.86
+   },
+   "27": {
+    "oracle": 98.612
+   },
+   "30": {
+    "oracle": 97.591
+   },
+   "31": {
+    "oracle": 97.003
+   },
+   "34": {
+    "oracle": 98.698
+   },
+   "35": {
+    "oracle": 97.189
+   },
+   "39": {
+    "oracle": 99.386
+   },
+   "43": {
+    "oracle": 99.511
+   }
+  },
+  "DropInLiquid__bg576__5Dn0iF_trajectory/inbetween_s4": {
+   "1": {
+    "oracle": 84.944
+   },
+   "2": {
+    "oracle": 32.683
+   },
+   "3": {
+    "oracle": 29.846
+   },
+   "5": {
+    "oracle": 30.346
+   },
+   "6": {
+    "oracle": 43.251
+   },
+   "7": {
+    "oracle": 80.086
+   },
+   "9": {
+    "oracle": 86.577
+   },
+   "10": {
+    "oracle": 58.473
+   },
+   "11": {
+    "oracle": 56.668
+   },
+   "13": {
+    "oracle": 62.774
+   },
+   "14": {
+    "oracle": 74.125
+   },
+   "15": {
+    "oracle": 94.785
+   },
+   "18": {
+    "oracle": 75.332
+   },
+   "19": {
+    "oracle": 89.934
+   },
+   "21": {
+    "oracle": 87.148
+   },
+   "22": {
+    "oracle": 89.387
+   },
+   "23": {
+    "oracle": 98.712
+   }
+  },
+  "CrankPush__bg001__4LCqMm_trajectory/inbetween_s4": {
+   "1": {
+    "oracle": 90.062
+   },
+   "2": {
+    "oracle": 89.711
+   },
+   "3": {
+    "oracle": 95.062
+   }
+  },
+  "MovingHitsFixed_UniformPanelSpin__bg080__81QBhq_trajectory/inbetween_s4": {
+   "1": {
+    "oracle": 77.373
+   },
+   "2": {
+    "oracle": 71.73
+   },
+   "3": {
+    "oracle": 91.335
+   },
+   "5": {
+    "oracle": 85.466
+   },
+   "6": {
+    "oracle": 73.04
+   },
+   "7": {
+    "oracle": 90.883
+   },
+   "9": {
+    "oracle": 99.776
+   },
+   "10": {
+    "oracle": 99.537
+   },
+   "11": {
+    "oracle": 99.769
+   },
+   "14": {
+    "oracle": 99.719
+   },
+   "15": {
+    "oracle": 99.773
+   },
+   "17": {
+    "oracle": 83.642
+   },
+   "18": {
+    "oracle": 75.29
+   },
+   "19": {
+    "oracle": 86.983
+   },
+   "21": {
+    "oracle": 86.659
+   },
+   "22": {
+    "oracle": 65.762
+   },
+   "23": {
+    "oracle": 90.134
+   },
+   "26": {
+    "oracle": 94.356
+   },
+   "27": {
+    "oracle": 97.492
+   },
+   "29": {
+    "oracle": 64.196
+   },
+   "30": {
+    "oracle": 46.3
+   },
+   "31": {
+    "oracle": 68.876
+   },
+   "33": {
+    "oracle": 83.256
+   },
+   "34": {
+    "oracle": 52.182
+   },
+   "35": {
+    "oracle": 70.906
+   },
+   "38": {
+    "oracle": 89.524
+   },
+   "39": {
+    "oracle": 90.64
+   },
+   "42": {
+    "oracle": 66.855
+   },
+   "43": {
+    "oracle": 85.904
+   },
+   "46": {
+    "oracle": 56.16
+   },
+   "47": {
+    "oracle": 72.727
+   },
+   "49": {
+    "oracle": 77.536
+   },
+   "50": {
+    "oracle": 67.168
+   },
+   "51": {
+    "oracle": 78.042
+   },
+   "53": {
+    "oracle": 99.979
+   },
+   "54": {
+    "oracle": 91.977
+   },
+   "55": {
+    "oracle": 95.974
+   },
+   "57": {
+    "oracle": 96.036
+   },
+   "58": {
+    "oracle": 99.845
+   },
+   "59": {
+    "oracle": 91.417
+   },
+   "61": {
+    "oracle": 58.823
+   },
+   "62": {
+    "oracle": 32.658
+   },
+   "63": {
+    "oracle": 65.151
+   },
+   "66": {
+    "oracle": 99.087
+   },
+   "67": {
+    "oracle": 99.895
+   },
+   "69": {
+    "oracle": 90.982
+   },
+   "70": {
+    "oracle": 99.251
+   },
+   "71": {
+    "oracle": 95.911
+   }
+  },
+  "MagnetAttract_DoublePendulum__bg002__JKp2oO_trajectory/inbetween_s4": {
+   "1": {
+    "oracle": 70.244
+   },
+   "2": {
+    "oracle": 82.185
+   },
+   "3": {
+    "oracle": 94.098
+   },
+   "5": {
+    "oracle": 95.447
+   },
+   "6": {
+    "oracle": 79.583
+   },
+   "7": {
+    "oracle": 95.03
+   },
+   "9": {
+    "oracle": 99.337
+   },
+   "10": {
+    "oracle": 98.894
+   },
+   "11": {
+    "oracle": 99.887
+   },
+   "13": {
+    "oracle": 100.0
+   },
+   "14": {
+    "oracle": 98.84
+   },
+   "15": {
+    "oracle": 98.126
+   },
+   "18": {
+    "oracle": 94.797
+   },
+   "19": {
+    "oracle": 99.455
+   },
+   "23": {
+    "oracle": 99.719
+   },
+   "26": {
+    "oracle": 98.601
+   },
+   "27": {
+    "oracle": 99.702
+   },
+   "29": {
+    "oracle": 99.623
+   },
+   "30": {
+    "oracle": 99.738
+   },
+   "31": {
+    "oracle": 99.981
+   },
+   "33": {
+    "oracle": 100.0
+   },
+   "34": {
+    "oracle": 99.939
+   },
+   "35": {
+    "oracle": 99.918
+   },
+   "37": {
+    "oracle": 99.961
+   },
+   "38": {
+    "oracle": 99.642
+   },
+   "39": {
+    "oracle": 99.981
+   },
+   "46": {
+    "oracle": 99.942
+   },
+   "47": {
+    "oracle": 100.0
+   },
+   "50": {
+    "oracle": 99.963
+   },
+   "51": {
+    "oracle": 99.963
+   },
+   "53": {
+    "oracle": 99.963
+   },
+   "54": {
+    "oracle": 99.945
+   },
+   "55": {
+    "oracle": 99.944
+   },
+   "57": {
+    "oracle": 99.963
+   },
+   "58": {
+    "oracle": 99.981
+   },
+   "59": {
+    "oracle": 99.942
+   },
+   "62": {
+    "oracle": 99.963
+   },
+   "63": {
+    "oracle": 100.0
+   },
+   "67": {
+    "oracle": 100.0
+   },
+   "70": {
+    "oracle": 99.881
+   },
+   "71": {
+    "oracle": 99.92
+   }
+  },
+  "BalloonLift_RotTurnableInertia__bg001__KGh8Al_trajectory/inbetween_s4": {
+   "1": {
+    "oracle": 99.21
+   },
+   "2": {
+    "oracle": 99.89
+   },
+   "3": {
+    "oracle": 99.991
+   },
+   "23": {
+    "oracle": 99.988
+   },
+   "27": {
+    "oracle": 99.997
+   },
+   "31": {
+    "oracle": 100.0
+   },
+   "35": {
+    "oracle": 99.988
+   },
+   "39": {
+    "oracle": 99.994
+   },
+   "43": {
+    "oracle": 99.988
+   }
+  },
+  "ElasticFall__bg903__LgnL7g_trajectory/future10": {
+   "26": {
+    "oracle": 29.086,
+    "j": 4
+   },
+   "27": {
+    "oracle": 6.662,
+    "j": 5
+   },
+   "28": {
+    "oracle": 0.0,
+    "j": 6
+   },
+   "29": {
+    "oracle": 0.0,
+    "j": 7
+   },
+   "30": {
+    "oracle": 0.0,
+    "j": 8
+   },
+   "31": {
+    "oracle": 0.0,
+    "j": 9
+   },
+   "32": {
+    "oracle": 0.0,
+    "j": 10
+   }
+  },
+  "MovingHitsFixed_UniformPanelSpin__bg080__81QBhq_trajectory/future10": {
+   "38": {
+    "oracle": 58.812,
+    "j": 2
+   },
+   "39": {
+    "oracle": 40.306,
+    "j": 3
+   },
+   "40": {
+    "oracle": 28.727,
+    "j": 4
+   },
+   "41": {
+    "oracle": 27.335,
+    "j": 5
+   },
+   "42": {
+    "oracle": 23.688,
+    "j": 6
+   },
+   "43": {
+    "oracle": 21.409,
+    "j": 7
+   },
+   "44": {
+    "oracle": 18.046,
+    "j": 8
+   },
+   "45": {
+    "oracle": 15.785,
+    "j": 9
+   },
+   "46": {
+    "oracle": 12.513,
+    "j": 10
+   }
+  },
+  "MagnetAttract_DoublePendulum__bg002__JKp2oO_trajectory/future10": {
+   "37": {
+    "oracle": 99.98,
+    "j": 1
+   },
+   "38": {
+    "oracle": 97.967,
+    "j": 2
+   },
+   "39": {
+    "oracle": 84.73,
+    "j": 3
+   },
+   "40": {
+    "oracle": 61.677,
+    "j": 4
+   },
+   "41": {
+    "oracle": 45.494,
+    "j": 5
+   },
+   "42": {
+    "oracle": 29.218,
+    "j": 6
+   },
+   "43": {
+    "oracle": 23.023,
+    "j": 7
+   },
+   "44": {
+    "oracle": 10.444,
+    "j": 8
+   },
+   "45": {
+    "oracle": 6.65,
+    "j": 9
+   },
+   "46": {
+    "oracle": 0.482,
+    "j": 10
+   }
+  },
+  "BalloonLift_RotTurnableInertia__bg001__KGh8Al_trajectory/future10": {
+   "39": {
+    "oracle": 98.985,
+    "j": 3
+   },
+   "40": {
+    "oracle": 98.07,
+    "j": 4
+   },
+   "41": {
+    "oracle": 95.573,
+    "j": 5
+   },
+   "42": {
+    "oracle": 93.8,
+    "j": 6
+   },
+   "43": {
+    "oracle": 85.602,
+    "j": 7
+   },
+   "44": {
+    "oracle": 82.556,
+    "j": 8
+   },
+   "45": {
+    "oracle": 69.904,
+    "j": 9
+   },
+   "46": {
+    "oracle": 67.601,
+    "j": 10
+   }
+  }
+ },
+ "contact_step": {
+  "ElasticFall__bg903__LgnL7g_trajectory": 22,
+  "MovingHitsFixed_UniformPanelSpin__bg080__81QBhq_trajectory": 45,
+  "MagnetAttract_DoublePendulum__bg002__JKp2oO_trajectory": null,
+  "BalloonLift_RotTurnableInertia__bg001__KGh8Al_trajectory": null
+ }
+}

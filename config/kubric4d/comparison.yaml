@@ -1,0 +1,16 @@
+# AdaPixFlow zero-shot on Kubric-4D (Tab. 2 and the per-scene Tab. 10): six GCD scenes, each native frame repeated twice (_f1), 10 cm voxels.
+# The released PhysInOne model, without retraining. Input fused without views 0 and 1, ground truth from all views,
+# the protocol of Tab. 1. Tab. 2 pools the motion subsets over the common subset of scenes (splits/kubric4d.json).
+task: comparison
+checkpoint: checkpoints/adapixflow_physinone.pt
+output_root: ./experiments/kubric4d/
+data:
+  split: splits/kubric4d.json
+  fused_dirs: [data/kubric4d/fused]
+  input_dir: data/kubric4d/fused_holdout
+eval:
+  horizon: 10
+  substeps: 8
+  max_side: 512
+  tiling: [centered, 128, 64]
+  motion_split: splits/motion_split_kubric4d.json   # GT-defined target subsets of the common scenes (Tab. 2)

@@ -1,0 +1,85 @@
+diff --git a/flow3d/data/casual_dataset.py b/flow3d/data/casual_dataset.py
+index bd79f6d..8225147 100644
+--- a/flow3d/data/casual_dataset.py
++++ b/flow3d/data/casual_dataset.py
+@@ -175,7 +175,7 @@ class CasualDataset(BaseDataset):
+                     os.path.join(self.cache_dir, "scene_norm_dict.pth")
+                 )
+             else:
+-                tracks_3d = self.get_tracks_3d(5000, step=self.num_frames // 10)[0]
++                tracks_3d = self.get_tracks_3d(5000, step=max(1, self.num_frames // 10))[0]
+                 scale, transfm = compute_scene_norm(tracks_3d, self.w2cs)
+                 scene_norm_dict = SceneNormDict(scale=scale, transfm=transfm)
+                 os.makedirs(self.cache_dir, exist_ok=True)
+diff --git a/flow3d/init_utils.py b/flow3d/init_utils.py
+index 9790b36..d24b3d0 100644
+--- a/flow3d/init_utils.py
++++ b/flow3d/init_utils.py
+@@ -10,7 +10,12 @@ import roma
+ import torch
+ import torch.nn.functional as F
+ from torch import Tensor
+-from cuml import HDBSCAN, KMeans
++try:
++    from cuml import HDBSCAN, KMeans
++    _CUML = True
++except ImportError:
++    _CUML = False  # RAPIDS unavailable (no sm_120 build here): same algorithms from scikit-learn, on CPU
++    from sklearn.cluster import HDBSCAN, KMeans
+ from loguru import logger as guru
+ from matplotlib.pyplot import get_cmap
+ from tqdm import tqdm
+@@ -576,7 +581,7 @@ def sample_initial_bases_centers(
+         model = KMeans(n_clusters=num_bases)
+     else:
+         model = HDBSCAN(min_cluster_size=20, max_cluster_size=num_tracks // 4)
+-    model.fit(vel_dirs)
++    model.fit(vel_dirs if _CUML else cp.asnumpy(vel_dirs))
+     labels = model.labels_
+     num_bases = labels.max().item() + 1
+     sampled_centers = torch.stack(
+diff --git a/flow3d/trainer.py b/flow3d/trainer.py
+index da38a92..a102d57 100644
+--- a/flow3d/trainer.py
++++ b/flow3d/trainer.py
+@@ -1,4 +1,5 @@
+ import functools
++import os
+ import time
+ from dataclasses import asdict
+ from typing import cast
+@@ -402,6 +403,10 @@ class Trainer:
+         depth_masks = (
+             masks[..., None] if not self.model.has_bg else valid_masks[..., None]
+         )
++        # AdaPixFlow adapter (opt-in, disclosed): pixels without depth (written as 0) are left out of the depth losses
++        mask_invalid = os.environ.get("SOM_MASK_INVALID_DEPTH") == "1"
++        if mask_invalid:
++            depth_masks = depth_masks * (depths[..., None] > 0)
+ 
+         pred_depth = cast(torch.Tensor, rendered_all["depth"])
+         pred_disp = 1.0 / (pred_depth + 1e-5)
+@@ -417,10 +422,13 @@ class Trainer:
+         # mapped depth loss (using cached depth with EMA)
+         #  mapped_depth_loss = 0.0
+         mapped_depth_gt = torch.cat([x.reshape(-1) for x in target_track_depths], dim=0)
++        mapped_w = track_weights[visibles]
++        if mask_invalid:
++            mapped_w = mapped_w * (mapped_depth_gt[visibles, None] > 0)
+         mapped_depth_loss = masked_l1_loss(
+             1 / (mapped_depth[masks_flatten][visibles] + 1e-5),
+             1 / (mapped_depth_gt[visibles, None] + 1e-5),
+-            track_weights[visibles],
++            mapped_w,
+         )
+ 
+         loss += mapped_depth_loss * self.losses_cfg.w_depth_const
+@@ -572,6 +580,8 @@ class Trainer:
+         for _current_xys, _current_radii, _current_img_wh in zip(
+             self._batched_xys, self._batched_radii, self._batched_img_wh
+         ):
++            if _current_radii.dim() == 3:  # gsplat >= 1.5 returns per-axis radii (C, G, 2)
++                _current_radii = _current_radii.max(dim=-1).values
+             sel = _current_radii > 0
+             gidcs = torch.where(sel)[1]
+             # normalize grads to [-1, 1] screen space

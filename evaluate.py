@@ -16,7 +16,7 @@ import numpy as np
 
 from adapixflow.config import load_config, pick_device
 from adapixflow.data import SceneSet, load_split
-from adapixflow.evaluation import evaluate_comparison, evaluate_heldout
+from adapixflow.evaluation import evaluate_comparison, evaluate_heldout, motion_split_scores
 from adapixflow.model import load_checkpoint
 
 
@@ -56,6 +56,19 @@ def main():
         out["comparison"] = evaluate_comparison(model, scale, names, cfg["data"]["fused_dirs"][0], cfg["data"]["input_dir"],
                                                 cfg["eval"])
         print_table(out["comparison"], f"comparison scenes ({len(names)}), F1 (%) and median Chamfer distance")
+        if split.get("common") and set(split["common"]) != set(names):  # benchmarks: the subset every method was run on
+            common = [n for n in split["common"] if n in names]
+            sub = {t: {"mean": {k: float(np.nanmean([v["scenes"][n][k] for n in common
+                                                     if n in v["scenes"] and v["scenes"][n]["steps"]]))
+                                for k in ("f1_1", "f1_2", "chamfer_mm")}} for t, v in out["comparison"].items()}
+            out["common_subset_means"] = sub
+            print_table(sub, f"common subset ({len(common)} scenes), scene means")
+        if cfg["eval"].get("motion_split"):
+            ms = motion_split_scores(out["comparison"], cfg["eval"]["motion_split"], split.get("common"))
+            out["motion_split"] = ms
+            print("\nmotion split, F1@2 (%) pooled over targets")
+            for g, v in ms.items():
+                print(f"  {g:26s} {v['f1_2']:6.1f}  (n={v['n']})")
     else:
         raise ValueError(f"unknown task {cfg['task']}")
     path = Path(args.out or Path(cfg["output_root"]) / "eval" / f"{Path(cfg['_path']).stem}.json")

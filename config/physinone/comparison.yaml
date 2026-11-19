@@ -1,4 +1,5 @@
-# AdaPixFlow -- the six comparison scenes (Tab. 1): input fused from the training views (views 0 and 1 held out),
+# AdaPixFlow -- the six comparison scenes (Tab. 1, and the motion split of Tab. 9): input fused from the training views
+# (views 0 and 1 held out),
 # ground truth fused from all views, in-between prediction at s = 4 and future prediction of 10 steps,
 # over the whole moving region (larger windows run in overlapping 128^3 tiles).
 task: comparison
@@ -13,3 +14,4 @@ eval:
   substeps: 8
   max_side: 512
   tiling: [centered, 128, 64]
+  motion_split: splits/motion_split_physinone.json   # GT-defined target subsets (Tab. 9)

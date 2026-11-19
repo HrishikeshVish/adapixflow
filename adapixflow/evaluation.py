@@ -12,6 +12,8 @@ scene, then over scenes.
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import numpy as np
 import torch
 
@@ -120,27 +122,76 @@ def evaluate_heldout(model, scale, scenes, cfg, log=print):
 @torch.no_grad()
 def evaluate_comparison(model, scale, names, gt_dir, input_dir, cfg, log=print):
     """Comparison-scene evaluation (Tab. 1): inputs fused from the training views (input_dir), ground truth from all views
-    (gt_dir), on the whole moving region. Returns {task: {"scenes": {name: metrics}, "mean": {...}}}."""
+    (gt_dir), on the whole moving region. input_dir may map each task to its own fusion ({"inbetween_s4": dir,
+    "future10": dir}, as for estimated masks); a scene without a fusion for a task is not scored on it.
+    Returns {task: {"scenes": {name: metrics}, "mean": {...}}}."""
     tasks = [("inbetween_s4", "inbetween", 4), ("future10", "future", 2)]
+    dirs = input_dir if isinstance(input_dir, dict) else {t: input_dir for t, _, _ in tasks}
+    tasks = [t for t in tasks if dirs.get(t[0])]
     res = {t: {"scenes": {}} for t, _, _ in tasks}
     for name in names:
-        Sg, Si = FusedScene(gt_dir, name), FusedScene(input_dir, name)
-        voxel, lo_g, lo_i = Sg.voxel, Sg.lo, Si.lo
+        Sg = FusedScene(gt_dir, name)
+        voxel, lo_g = Sg.voxel, Sg.lo
         cg, size = motion_window(Sg, cfg["max_side"])
         corner_g = cg - size // 2
-        ci = np.round(((cg + 0.5) * voxel + lo_g - lo_i) / voxel - 0.5).astype(int)  # the same window in the input grid
-        corner_i = ci - size // 2
-        shift = ((corner_i + 0.5) * voxel + lo_i - ((corner_g + 0.5) * voxel + lo_g)) / voxel
         gt_objects = {k: object_points(Sg.crop([k], cg, size)[0][0]) for k in range(Sg.T)}
-        in_dense = _Dense(Si, ci, size, keep=6)
+        cache = {}
         for tname, task, s in tasks:
+            d = Path(dirs[tname])
+            if not (d / f"{name}.json").exists():
+                continue
+            if d not in cache:
+                Si = FusedScene(d, name)
+                ci = np.round(((cg + 0.5) * voxel + lo_g - Si.lo) / voxel - 0.5).astype(int)  # the same window in the input grid
+                corner_i = ci - size // 2
+                shift = ((corner_i + 0.5) * voxel + Si.lo - ((corner_g + 0.5) * voxel + lo_g)) / voxel
+                cache = {d: (_Dense(Si, ci, size, keep=6), shift)}
+            in_dense, shift = cache[d]
             P = predictions(model, scale, in_dense, Sg.T, size, task, s, cfg["horizon"], cfg["substeps"], tuple(cfg["tiling"]))
-            m = score(P, gt_objects.__getitem__, voxel, "median", shift)
-            res[tname]["scenes"][name] = m
+            res[tname]["scenes"][name] = score(P, gt_objects.__getitem__, voxel, "median", shift)
         log(f"  {name[:48]:48s} window {size.tolist()}  " + "  ".join(
             f"{t} F1@2 {res[t]['scenes'][name].get('f1_2', np.nan) * 100:5.1f} (n={res[t]['scenes'][name]['steps']})"
-            for t, _, _ in tasks))
+            for t, _, _ in tasks if name in res[t]["scenes"]))
     for tname in res:
         rows = [m for m in res[tname]["scenes"].values() if m["steps"]]
         res[tname]["mean"] = {k: float(np.nanmean([m[k] for m in rows])) for k in ("f1_1", "f1_2", "chamfer_mm")} if rows else {}
     return res
+
+
+def motion_split_scores(res, split_file, scenes=None):
+    """F1@2 (%) pooled over the targets of each GT-defined motion subset (Tab. 2 and Tab. 9): in-between targets that
+    the oracle linear interpolation predicts with F1 >= threshold (linear) or below (non-linear), non-linear without
+    PanelSpin, future targets 1-3 and 4-10 steps ahead, and future targets before or after the first ground contact.
+    res: evaluate_comparison output; scenes: restrict to these scenes (e.g. the common subset of a benchmark)."""
+    import json
+    S = json.load(open(split_file))
+    thr, contact = S.get("threshold", 90.0), S.get("contact_step", {})
+    groups = {}
+
+    def add(name, v):
+        groups.setdefault(name, []).append(v)
+
+    for key, targets in S["targets"].items():
+        scene, task = key.rsplit("/", 1)
+        if scenes is not None and scene not in scenes:
+            continue
+        per_step = res.get(task, {}).get("scenes", {}).get(scene, {}).get("per_step_f1_2", {})
+        per_step = {int(k): v for k, v in per_step.items()}
+        for k, t in targets.items():
+            k = int(k)
+            if k not in per_step:
+                continue
+            f1 = 100 * per_step[k]
+            if task.startswith("inbetween"):
+                cls = "linear" if t["oracle"] >= thr else "non-linear"
+                add(cls, f1)
+                if cls == "non-linear" and "PanelSpin" not in scene:
+                    add("non-linear w/o PanelSpin", f1)
+            else:
+                add("future, j<=3" if t["j"] <= 3 else "future, j>=4", f1)
+                if contact:
+                    kc = contact.get(scene)
+                    add("future, before contact" if kc is None or k <= kc else "future, after contact", f1)
+    order = ["linear", "non-linear", "non-linear w/o PanelSpin", "future, j<=3", "future, j>=4", "future, before contact",
+             "future, after contact"]
+    return {g: {"f1_2": float(np.mean(groups[g])), "n": len(groups[g])} for g in order if g in groups}

@@ -4,6 +4,8 @@
     python dataset/fuse.py data/physinone/cache data/physinone/fused_holdout --holdout 0,1 \\
         --bounds-like data/physinone/fused --scenes <a,b,...>        # inputs of the comparison scenes
 
+    python dataset/fuse.py data/kubric4d/cache data/kubric4d/fused --split splits/kubric4d.json --voxel 0.1 --max-extent 16
+
 Options: --voxel 0.0125 (m), --stride 1 (pixel stride), --max-extent 4.0 (m), --occ-min 3.
 """
 
@@ -36,8 +38,9 @@ def main():
     files = sorted(p for p in Path(a.cache_dir).glob("*.npz") if not p.name.endswith(".tmp.npz"))
     keep = set(filter(None, a.scenes.split(",")))
     if a.split:
-        sp = json.load(open(a.split))
-        keep |= {n for k in ("train", "test") for v in sp[k].values() for n in v} | set(sp["val"])
+        for k, v in json.load(open(a.split)).items():  # every scene the split lists (PhysInOne: train, test, val)
+            if not k.startswith("_"):
+                keep |= {n for vv in (v.values() if isinstance(v, dict) else [v]) for n in vv}
     if keep:
         files = [p for p in files if p.name[:-4] in keep]
     ho = tuple(int(v) for v in a.holdout.split(",")) if a.holdout else ()

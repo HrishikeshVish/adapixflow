@@ -1,0 +1,25 @@
+{
+ "_about": "Depth limit (m) of the estimated-input fusions, per scene and task: the largest depth that plane-sweep stereo on the training views measures at the task's observed frames. Estimated depth beyond it is invalid.",
+ "BalloonLift_RotTurnableInertia__bg001__KGh8Al_trajectory": {
+  "inbetween": 4.94921875,
+  "future": 4.94921875
+ },
+ "CrankPush__bg001__4LCqMm_trajectory": {
+  "inbetween": 6.171875
+ },
+ "DropInLiquid__bg576__5Dn0iF_trajectory": {
+  "inbetween": 7.76171875
+ },
+ "ElasticFall__bg903__LgnL7g_trajectory": {
+  "inbetween": 1.7646484375,
+  "future": 1.7763671875
+ },
+ "MagnetAttract_DoublePendulum__bg002__JKp2oO_trajectory": {
+  "inbetween": 4.36328125,
+  "future": 4.36328125
+ },
+ "MovingHitsFixed_UniformPanelSpin__bg080__81QBhq_trajectory": {
+  "inbetween": 4.62109375,
+  "future": 4.62109375
+ }
+}

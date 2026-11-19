@@ -4,7 +4,8 @@
   <ul align="center" style="list-style: none;">
     <summary>
       <h1>AdaPixFlow: Learning Continuous-Time 3D Dynamics Across Scenes from Sparse Multi-view Observations</h1>
-      <i>Under review</i>
+      <p><a href="https://github.com/HrishikeshVish">Hrishikesh Viswanath</a> &emsp; Aniket Bera</p>
+      <p>Department of Computer Science, Purdue University</p>
     </summary>
   </ul>
 </div>
@@ -23,7 +24,7 @@
 <div id="toc">
   <ul align="center" style="list-style: none;">
     <summary>
-      <h2><a href="#overview">Overview</a> &emsp; <a href="#data">Data</a> &emsp; <a href="#quick-start">Quick Start</a> &emsp; <a href="#training">Training</a> &emsp; <a href="#evaluation">Evaluation</a> &emsp; <a href="#citation">Citation</a></h2>
+      <h2><a href="#overview">Overview</a> &emsp; <a href="#data">Data</a> &emsp; <a href="#reproducing-the-paper">Reproducing the Paper</a> &emsp; <a href="#training">Training</a> &emsp; <a href="#evaluation">Evaluation</a> &emsp; <a href="#baselines">Baselines</a> &emsp; <a href="#citation">Citation</a></h2>
     </summary>
   </ul>
 </div>
@@ -47,7 +48,7 @@ The operator is trained once, through the advection, by comparing the advected p
 - **One model for in-between and future prediction.** The context holds the observations on both sides of a gap when they exist, and the past ones otherwise. One forward pass gives the velocity at all 13 integer times of a pass.
 - **Closed-form fusion.** The voxel grid is computed directly from depth, masks and the known cameras, so the network only learns how the fused state moves.
 - **Point-set supervision.** A Chamfer loss normalized by the error of a static prediction, plus local distance preservation. Neither needs tracks.
-- **One command per result.** The configs in `config/physinone/` are the exact settings behind the paper's PhysInOne results, and the released model reproduces them.
+- **One command per result.** The configs in `config/` are the exact settings behind the paper's 3D results on PhysInOne and on the three physics benchmarks, and the released model reproduces them.
 
 ---
 
@@ -70,6 +71,14 @@ On the six PhysInOne comparison scenes (Tab. 1 of the paper; F1 in %, with views
 | SpatialTrackerV2 | RGB-D, M | 87.8 | 50.7 |
 | OpenD4RT | RGB-D, M | 84.0 | 45.9 |
 | **AdaPixFlow** | RGB-D, M | **90.0** | **58.4** |
+
+Zero-shot on three physics benchmarks (Tab. 2; F1 in %, pooled over the targets of the scenes every method was run on):
+
+| Benchmark | Linear | Non-linear | Future, 4–10 steps |
+| :--- | :-: | :-: | :-: |
+| Spring-Gaus | 95.7 | 72.3 | 52.7 |
+| PhysGaia | 98.3 | 61.4 | 62.2 |
+| Kubric-4D | 98.7 | 91.6 | 79.5 |
 
 On the held-out Test (15) and Val (8) scenes (Tab. 3; F1 in %, Chamfer distance in mm):
 
@@ -98,22 +107,26 @@ On the held-out Test (15) and Val (8) scenes (Tab. 3; F1 in %, Chamfer distance 
 ```
 adapixflow/
 ├── train.py                      # training entry point (one YAML config per run)
-├── evaluate.py                   # held-out (Tab. 3) and comparison-scene (Tab. 1) evaluation
+├── evaluate.py                   # held-out (Tab. 3) and comparison-protocol (Tab. 1, 2, 9, 10) evaluation
+├── evaluate_points.py            # scores another method's predicted points with the same protocol
 ├── adapixflow/
 │   ├── fusion.py                 # volumetric fusion of multi-view RGB-D, sparse fused scenes
 │   ├── model.py                  # the velocity U-Net and checkpoint loading
 │   ├── flow.py                   # node fields, tiled inference, midpoint advection
 │   ├── training.py, losses.py    # the batch loss: relative Chamfer + distance preservation
 │   ├── data.py                   # splits, moving voxels, evaluation windows, training sampler
-│   ├── evaluation.py, metrics.py # the two evaluation protocols, F1 and Chamfer
+│   ├── evaluation.py, metrics.py # the evaluation protocols, motion split, F1 and Chamfer
 │   └── config.py                 # every config key and its default
-├── dataset/                      # PhysInOne download and conversion, fusion CLI
-├── config/physinone/             # train.yaml, heldout.yaml, comparison.yaml: the paper's settings
-├── splits/                       # the scenes of every split, and where to download them
+├── dataset/
+│   ├── fetch_physinone.py, fuse.py   # PhysInOne download and conversion, fusion CLI
+│   ├── benchmarks/               # Spring-Gaus, PhysGaia and Kubric-4D converters
+│   └── estimated/                # Depth Anything 3 depth, SAM 2.1 masks, and their fusion
+├── config/                       # physinone/, springgaus/, physgaia/, kubric4d/: the paper's settings
+├── splits/                       # scenes of every split, motion-split labels, estimated-input depth limits
 ├── scripts/                      # download / prepare / train / evaluate
+├── third_party/                  # pinned submodules (Depth Anything 3, baselines) and our patches
 └── tests/                        # unit checks (fusion, advection, model, losses)
 ```
-
 ---
 
 ## Installation
@@ -141,8 +154,13 @@ All data goes under `data/`. Configs use repo-relative paths, so run every comma
 | Dataset | Scenes | Get it | Prepare |
 | :--- | :--- | :--- | :--- |
 | PhysInOne | 152 training, 15 Test, 8 Val (6 of them comparison scenes) | `bash scripts/download_physinone.sh` | `bash scripts/prepare_physinone.sh` |
+| [Spring-Gaus](https://github.com/Colmar-zlicheng/Spring-Gaus) | 7 `mpm_synthetic` scenes | `bash scripts/download_benchmarks.sh springgaus` | `bash scripts/prepare_benchmarks.sh springgaus` |
+| [PhysGaia](https://huggingface.co/datasets/mijeongkim/PhysGaia) | `visco_bouncing_balls` | `bash scripts/download_benchmarks.sh physgaia` | `bash scripts/prepare_benchmarks.sh physgaia` |
+| [Kubric-4D](https://gcd.cs.columbia.edu/) | 6 GCD scenes | `bash scripts/download_benchmarks.sh kubric4d` | `bash scripts/prepare_benchmarks.sh kubric4d` |
 
 `download_physinone.sh` fetches the 175 scenes listed in `splits/physinone_sources.json` from Hugging Face (121 GB of zips). It converts each one to a 560 px cache (48 GB in total) and deletes the zip. `prepare_physinone.sh` then fuses every scene into `data/physinone/fused` (9 GB). It also fuses the six comparison scenes without views 0 and 1 into `data/physinone/fused_holdout`, on the same grids.
+
+The benchmark converters render depth and masks from the released particles (Spring-Gaus, PhysGaia) or read them from the release (Kubric-4D), and write the PhysInOne cache layout. Spring-Gaus and Kubric-4D frames are written twice, so that one step of the model is one native frame. Spring-Gaus `mpm_synthetic.zip` comes from the authors' Google Drive folder, which the script names if the zip is missing.
 
 <details>
 <summary><b>Notes on the splits</b></summary>
@@ -155,16 +173,37 @@ All data goes under `data/`. Configs use repo-relative paths, so run every comma
 
 ---
 
-## Quick Start
+## Reproducing the Paper
 
-With the pretrained model and the prepared data:
+With the pretrained model and the prepared data, each command prints the numbers of one table and writes per-scene and per-step results to `experiments/`. `evaluate.py <config>` runs the same thing directly.
+
+| Result | Data | Command |
+| :--- | :--- | :--- |
+| Tab. 1, comparison scenes, and Tab. 9, motion split | PhysInOne | `bash scripts/evaluate.sh physinone/comparison` |
+| Tab. 2 and Tab. 10, physics benchmarks | Spring-Gaus | `bash scripts/evaluate.sh springgaus/comparison` |
+| | PhysGaia | `bash scripts/evaluate.sh physgaia/comparison` |
+| | Kubric-4D | `bash scripts/evaluate.sh kubric4d/comparison` |
+| Tab. 3, held-out Test and Val scenes | PhysInOne | `bash scripts/evaluate.sh physinone/heldout` |
+| Estimated depth and masks (78.5 / 53.3) | PhysInOne + `prepare_estimated.sh` | `bash scripts/evaluate.sh physinone/estimated` |
+
+For the benchmarks, Tab. 2 pools the motion subsets over the scenes every method was run on (`common` in `splits/<benchmark>.json`), and Tab. 10 lists the per-scene F1. The motion subsets are fixed by the ground truth alone, from the F1 that an oracle linear interpolation of the ground-truth states reaches on each target (`splits/motion_split_*.json`).
+
+<details>
+<summary><b>Estimated inputs</b></summary>
+
+The estimated-input result replaces the dataset depth and masks of the comparison scenes with estimates from the RGB of the observed views: [Depth Anything 3](https://github.com/ByteDance-Seed/Depth-Anything-3) (giant, posed with our cameras) and [SAM 2.1](https://github.com/facebookresearch/sam2) (`facebook/sam2.1-hiera-large`, prompted automatically from color and depth changes). Depth Anything 3 is a pinned submodule. SAM 2.1 runs through its `transformers` implementation.
 
 ```bash
-bash scripts/evaluate.sh comparison     # Tab. 1, AdaPixFlow row
-bash scripts/evaluate.sh heldout        # Tab. 3
+git submodule update --init third_party/Depth-Anything-3
+pip install -e third_party/Depth-Anything-3          # in its own environment (DA3_PYTHON below)
+pip install transformers==5.17.0                     # in the AdaPixFlow environment, for SAM 2.1
+DA3_PYTHON=/path/to/da3/env/bin/python bash scripts/prepare_estimated.sh 0
+bash scripts/evaluate.sh physinone/estimated
 ```
 
-Each prints a table and writes per-scene results (including per-step F1) to `experiments/eval/<config>.json`. Use `--scenes <name,...>` with `evaluate.py` to evaluate a subset.
+`prepare_estimated.sh` runs both models on the training views only, and fuses their outputs on the grids of the dataset fusion. In-between and future prediction get separate fusions, since the masks see only that task's observations.
+
+</details>
 
 ---
 
@@ -182,25 +221,53 @@ bash scripts/train.sh config/physinone/train.yaml 0     # -> experiments/physino
 
 | Protocol | Config | Input | Ground truth | Window | Chamfer |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Comparison scenes (Tab. 1) | `comparison.yaml` | fusion without views 0 and 1 | fusion of all views | whole moving region (128³ tiles) | median |
-| Held-out scenes (Tab. 3) | `heldout.yaml` | fusion of all views | the same | moving region, capped at 128 voxels | mean |
+| Comparison scenes and benchmarks (Tab. 1, 2, 9, 10) | `*/comparison.yaml` | fusion without views 0 and 1 | fusion of all views | whole moving region (128³ tiles) | median |
+| Held-out scenes (Tab. 3) | `physinone/heldout.yaml` | fusion of all views | the same | moving region, capped at 128 voxels | mean |
 
 Both protocols score F1 at 1 and 2 voxels (the paper reports 2 voxels, 2.5 cm). They score only the target steps at which the ground-truth object moved by more than one voxel since the observation before the gap (in-between) or the last observation (future). Results are averaged over the scored steps of a scene, then over scenes. On a GPU, the forward pass runs in bfloat16 as in the paper. On a CPU, it runs in float32, which changes F1 by about 0.1 point.
+
+---
+
+## Baselines
+
+The compared methods are pinned submodules in `third_party/`, at the commits we ran. Pull the ones you need:
+
+```bash
+git submodule update --init third_party/FreeGave        # or TRACE, shape-of-motion, MoSca, SpaTrackerV2, Open-d4rt
+git -C third_party/FreeGave apply ../patches/FreeGave.patch   # FreeGave, TRACE, shape-of-motion and MoSca only
+```
+
+| Method | Repository | Our patch |
+| :--- | :--- | :--- |
+| FreeGave | [vLAR-group/FreeGave](https://github.com/vLAR-group/FreeGave) | missing `<cstdint>` / `<cfloat>` includes (build fix) |
+| TRACE | [vLAR-group/TRACE](https://github.com/vLAR-group/TRACE) | the same build fix |
+| Shape of Motion | [vye16/shape-of-motion](https://github.com/vye16/shape-of-motion) | scikit-learn fallback for cuML, gsplat ≥ 1.5 radii, opt-in masking of invalid depth |
+| MoSca | [JiahuiLei/MoSca](https://github.com/JiahuiLei/MoSca) | build fixes, NumPy 2, the `camera.py` symlink |
+| SpatialTrackerV2 | [henry123-boy/SpaTrackerV2](https://github.com/henry123-boy/SpaTrackerV2) | none |
+| OpenD4RT | [Lijiaxin0111/Open-d4rt](https://github.com/Lijiaxin0111/Open-d4rt) (unofficial D4RT) | none |
+
+The appendix of the paper lists the inputs and settings we gave each method (tables *Per-scene dynamics baselines* and *Adapting 4D methods*). `evaluate_points.py` scores any method's predicted object points with the protocol of Tab. 1 and 2, so that a prediction file in its documented format is scored exactly as AdaPixFlow is:
+
+```bash
+python evaluate_points.py config/physinone/comparison.yaml --pred <dir>   # <dir>/<task>/<scene>/pred.npz
+```
 
 ---
 
 ## Citation
 
 ```bibtex
-@article{adapixflow2026,
+@article{viswanath2026adapixflow,
   title={AdaPixFlow: Learning Continuous-Time 3D Dynamics Across Scenes from Sparse Multi-view Observations},
+  author={Viswanath, Hrishikesh and Bera, Aniket},
+  journal={arXiv preprint},
   year={2026}
 }
 ```
 
 ## Acknowledgments
 
-We thank the authors of [PhysInOne](https://huggingface.co/datasets/vLAR/PhysInOne) for the dataset. Scenes are downloaded from their Hugging Face repositories under their license.
+We thank the authors of [PhysInOne](https://huggingface.co/datasets/vLAR/PhysInOne), [Spring-Gaus](https://github.com/Colmar-zlicheng/Spring-Gaus), [PhysGaia](https://huggingface.co/datasets/mijeongkim/PhysGaia) and [Kubric-4D](https://gcd.cs.columbia.edu/) for their data. Each dataset is downloaded from its own release, under its own license (PhysGaia: CC BY-NC 4.0).
 
 ## License
 

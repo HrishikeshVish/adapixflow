@@ -1,0 +1,116 @@
+{
+ "_about": "GT-only motion split of the common-subset targets of the benchmark (Tab. 2): per target, the F1@2 (%) of the oracle linear interpolation (in-between) or extrapolation (future); a target is linear if the oracle reaches 90.",
+ "threshold": 90.0,
+ "targets": {
+  "visco_bouncing_balls__s0.2_n1_f26/inbetween_s4": {
+   "1": {
+    "oracle": 79.898
+   },
+   "2": {
+    "oracle": 54.636
+   },
+   "3": {
+    "oracle": 72.178
+   },
+   "5": {
+    "oracle": 59.157
+   },
+   "6": {
+    "oracle": 28.748
+   },
+   "7": {
+    "oracle": 43.532
+   },
+   "9": {
+    "oracle": 47.915
+   },
+   "10": {
+    "oracle": 45.325
+   },
+   "11": {
+    "oracle": 64.349
+   },
+   "13": {
+    "oracle": 75.924
+   },
+   "14": {
+    "oracle": 71.846
+   },
+   "15": {
+    "oracle": 87.13
+   },
+   "18": {
+    "oracle": 85.597
+   },
+   "19": {
+    "oracle": 98.434
+   },
+   "22": {
+    "oracle": 88.525
+   },
+   "23": {
+    "oracle": 99.718
+   },
+   "27": {
+    "oracle": 99.768
+   },
+   "30": {
+    "oracle": 96.653
+   },
+   "31": {
+    "oracle": 99.795
+   },
+   "34": {
+    "oracle": 91.494
+   },
+   "35": {
+    "oracle": 99.844
+   },
+   "38": {
+    "oracle": 94.585
+   },
+   "39": {
+    "oracle": 99.708
+   },
+   "42": {
+    "oracle": 99.33
+   },
+   "43": {
+    "oracle": 99.414
+   },
+   "51": {
+    "oracle": 99.939
+   }
+  },
+  "visco_bouncing_balls__s0.2_n1_f26/future10": {
+   "48": {
+    "oracle": 81.07,
+    "j": 4
+   },
+   "49": {
+    "oracle": 66.518,
+    "j": 5
+   },
+   "50": {
+    "oracle": 56.914,
+    "j": 6
+   },
+   "51": {
+    "oracle": 51.081,
+    "j": 7
+   },
+   "52": {
+    "oracle": 46.763,
+    "j": 8
+   },
+   "53": {
+    "oracle": 42.1,
+    "j": 9
+   },
+   "54": {
+    "oracle": 38.003,
+    "j": 10
+   }
+  }
+ }
+}

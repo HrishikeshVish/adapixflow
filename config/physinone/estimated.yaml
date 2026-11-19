@@ -1,0 +1,18 @@
+# AdaPixFlow -- the comparison scenes with estimated inputs (Sec. 4, "estimated rather than dataset-provided depth and
+# masks"): depth from Depth Anything 3 and masks from SAM 2.1, fused on the grid of the dataset fusion
+# (bash scripts/prepare_estimated.sh). The ground truth and the protocol are those of Tab. 1. Each task has its own input
+# fusion, since the masks are computed from that task's observations only.
+task: comparison
+checkpoint: checkpoints/adapixflow_physinone.pt
+output_root: ./experiments/
+data:
+  split: splits/physinone.json
+  fused_dirs: [data/physinone/fused]
+  input_dir:
+    inbetween_s4: data/physinone/estimated/fused_inbetween
+    future10: data/physinone/estimated/fused_future
+eval:
+  horizon: 10
+  substeps: 8
+  max_side: 512
+  tiling: [centered, 128, 64]

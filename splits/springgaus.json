@@ -1,0 +1,3 @@
+{"_about": "Spring-Gaus scenes (mpm_synthetic), each native frame repeated twice (_r2) so that one step is one native frame. common: the subset on which every method of Tab. 2 was run.",
+ "comparison": ["torus_r2", "cross_r2", "apple_r2", "cream_r2", "toothpaste_r2", "chess_r2", "banana_r2"],
+ "common": ["torus_r2", "cross_r2", "apple_r2"]}

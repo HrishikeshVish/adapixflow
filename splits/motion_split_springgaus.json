@@ -1,0 +1,234 @@
+{
+ "_about": "GT-only motion split of the common-subset targets of the benchmark (Tab. 2): per target, the F1@2 (%) of the oracle linear interpolation (in-between) or extrapolation (future); a target is linear if the oracle reaches 90.",
+ "threshold": 90.0,
+ "targets": {
+  "torus_r2/inbetween_s4": {
+   "3": {
+    "oracle": 100.0
+   },
+   "5": {
+    "oracle": 96.542
+   },
+   "6": {
+    "oracle": 83.461
+   },
+   "7": {
+    "oracle": 92.836
+   },
+   "10": {
+    "oracle": 99.784
+   },
+   "11": {
+    "oracle": 100.0
+   },
+   "13": {
+    "oracle": 100.0
+   },
+   "14": {
+    "oracle": 98.664
+   },
+   "15": {
+    "oracle": 100.0
+   },
+   "18": {
+    "oracle": 100.0
+   },
+   "19": {
+    "oracle": 100.0
+   },
+   "26": {
+    "oracle": 99.883
+   },
+   "27": {
+    "oracle": 100.0
+   }
+  },
+  "torus_r2/future10": {
+   "15": {
+    "oracle": 99.865,
+    "j": 1
+   },
+   "16": {
+    "oracle": 78.903,
+    "j": 2
+   },
+   "17": {
+    "oracle": 99.865,
+    "j": 3
+   },
+   "18": {
+    "oracle": 66.257,
+    "j": 4
+   },
+   "19": {
+    "oracle": 38.238,
+    "j": 5
+   },
+   "20": {
+    "oracle": 23.736,
+    "j": 6
+   },
+   "21": {
+    "oracle": 20.279,
+    "j": 7
+   },
+   "22": {
+    "oracle": 18.766,
+    "j": 8
+   },
+   "23": {
+    "oracle": 19.353,
+    "j": 9
+   },
+   "24": {
+    "oracle": 19.972,
+    "j": 10
+   }
+  },
+  "cross_r2/inbetween_s4": {
+   "3": {
+    "oracle": 100.0
+   },
+   "5": {
+    "oracle": 87.801
+   },
+   "6": {
+    "oracle": 47.503
+   },
+   "7": {
+    "oracle": 81.121
+   },
+   "10": {
+    "oracle": 99.964
+   },
+   "11": {
+    "oracle": 100.0
+   },
+   "15": {
+    "oracle": 100.0
+   },
+   "17": {
+    "oracle": 83.931
+   },
+   "18": {
+    "oracle": 83.518
+   },
+   "19": {
+    "oracle": 99.9
+   },
+   "23": {
+    "oracle": 100.0
+   },
+   "27": {
+    "oracle": 100.0
+   }
+  },
+  "cross_r2/future10": {
+   "16": {
+    "oracle": 93.867,
+    "j": 2
+   },
+   "17": {
+    "oracle": 56.802,
+    "j": 3
+   },
+   "18": {
+    "oracle": 67.809,
+    "j": 4
+   },
+   "19": {
+    "oracle": 82.735,
+    "j": 5
+   },
+   "20": {
+    "oracle": 63.904,
+    "j": 6
+   },
+   "21": {
+    "oracle": 57.203,
+    "j": 7
+   },
+   "22": {
+    "oracle": 43.966,
+    "j": 8
+   },
+   "23": {
+    "oracle": 34.417,
+    "j": 9
+   },
+   "24": {
+    "oracle": 28.346,
+    "j": 10
+   }
+  },
+  "apple_r2/inbetween_s4": {
+   "3": {
+    "oracle": 100.0
+   },
+   "5": {
+    "oracle": 94.079
+   },
+   "6": {
+    "oracle": 58.445
+   },
+   "7": {
+    "oracle": 74.687
+   },
+   "9": {
+    "oracle": 99.825
+   },
+   "10": {
+    "oracle": 99.992
+   },
+   "11": {
+    "oracle": 99.993
+   },
+   "18": {
+    "oracle": 99.977
+   },
+   "19": {
+    "oracle": 99.992
+   },
+   "22": {
+    "oracle": 99.992
+   },
+   "23": {
+    "oracle": 99.992
+   }
+  },
+  "apple_r2/future10": {
+   "17": {
+    "oracle": 52.262,
+    "j": 3
+   },
+   "18": {
+    "oracle": 36.655,
+    "j": 4
+   },
+   "19": {
+    "oracle": 25.024,
+    "j": 5
+   },
+   "20": {
+    "oracle": 21.305,
+    "j": 6
+   },
+   "21": {
+    "oracle": 23.216,
+    "j": 7
+   },
+   "22": {
+    "oracle": 32.463,
+    "j": 8
+   },
+   "23": {
+    "oracle": 40.382,
+    "j": 9
+   },
+   "24": {
+    "oracle": 55.085,
+    "j": 10
+   }
+  }
+ }
+}

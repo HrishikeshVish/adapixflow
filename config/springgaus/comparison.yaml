@@ -1,0 +1,16 @@
+# AdaPixFlow zero-shot on Spring-Gaus (Tab. 2 and the per-scene Tab. 10): seven mpm_synthetic scenes, each native frame repeated twice (_r2) so that one step is one frame.
+# The released PhysInOne model, without retraining. Input fused without views 0 and 1, ground truth from all views,
+# the protocol of Tab. 1. Tab. 2 pools the motion subsets over the common subset of scenes (splits/springgaus.json).
+task: comparison
+checkpoint: checkpoints/adapixflow_physinone.pt
+output_root: ./experiments/springgaus/
+data:
+  split: splits/springgaus.json
+  fused_dirs: [data/springgaus/fused]
+  input_dir: data/springgaus/fused_holdout
+eval:
+  horizon: 10
+  substeps: 8
+  max_side: 512
+  tiling: [centered, 128, 64]
+  motion_split: splits/motion_split_springgaus.json   # GT-defined target subsets of the common scenes (Tab. 2)
