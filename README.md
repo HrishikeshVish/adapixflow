@@ -6,6 +6,7 @@
       <h1>AdaPixFlow: Learning Continuous-Time 3D Dynamics Across Scenes from Sparse Multi-view Observations</h1>
       <p><a href="https://github.com/HrishikeshVish">Hrishikesh Viswanath</a> &emsp; Aniket Bera</p>
       <p>Department of Computer Science, Purdue University</p>
+      <p><a href="https://arxiv.org/abs/2611.26433">arXiv</a> &emsp; <a href="https://hrishikeshvish.github.io/adapixflow/">Project page</a></p>
     </summary>
   </ul>
 </div>
@@ -257,11 +258,14 @@ python evaluate_points.py config/physinone/comparison.yaml --pred <dir>   # <dir
 ## Citation
 
 ```bibtex
-@article{viswanath2026adapixflow,
+@misc{viswanath2026adapixflowlearningcontinuoustime3d,
   title={AdaPixFlow: Learning Continuous-Time 3D Dynamics Across Scenes from Sparse Multi-view Observations},
-  author={Viswanath, Hrishikesh and Bera, Aniket},
-  journal={arXiv preprint},
-  year={2026}
+  author={Hrishikesh Viswanath and Aniket Bera},
+  year={2026},
+  eprint={2611.26433},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2611.26433},
 }
 ```
 
